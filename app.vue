@@ -2,20 +2,18 @@
   <UApp>
   <div class="min-h-screen bg-white">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-700">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-4">
             <img src="/logo.png" alt="Inspirilab" class="h-8 w-auto" />
-            <span class="text-xl font-bold text-gray-900">Inspirilab</span>
           </div>
           <div class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="text-gray-700 hover:text-[#23b573] transition-colors">Home</a>
-            <a href="#about" class="text-gray-700 hover:text-[#23b573] transition-colors">About</a>
-            <a href="#services" class="text-gray-700 hover:text-[#23b573] transition-colors">Services</a>
-            <a href="#contact" class="text-gray-700 hover:text-[#23b573] transition-colors">Contact</a>
+            <a href="#home" class="text-gray-300 hover:text-[#23b573] transition-colors">Home</a>
+            <a href="#about" class="text-gray-300 hover:text-[#23b573] transition-colors">About</a>
+            <a href="#technologies" class="text-gray-300 hover:text-[#23b573] transition-colors">Technologies</a>
           </div>
-          <UButton color="green" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065]">
+          <UButton color="primary" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065]">
             Get Started
           </UButton>
         </div>
@@ -46,7 +44,7 @@
           Where innovation meets inspiration. We create cutting-edge solutions that transform ideas into reality.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <UButton size="lg" color="green" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065] text-lg px-8 py-4">
+          <UButton size="lg" color="primary" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065] text-lg px-8 py-4">
             Explore Our Work
           </UButton>
           <UButton size="lg" variant="outline" class="border-[#23b573] text-[#23b573] hover:bg-[#23b573] hover:text-white text-lg px-8 py-4">
@@ -103,122 +101,99 @@
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white relative">
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-20 bg-gray-50 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span class="text-[#23b573]">Services</span>
+            Our <span class="text-[#23b573]">Technologies</span>
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive solutions tailored to meet your unique needs and challenges.
+            Exploring cutting-edge technologies that drive innovation and transformation.
           </p>
         </div>
         
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-          <div class="space-y-8">
-            <div class="flex items-start space-x-4">
-              <div class="w-12 h-12 bg-[#23b573] rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-code-bracket" class="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Web Development</h3>
-                <p class="text-gray-600">Custom web applications built with modern technologies and best practices.</p>
-              </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-cpu-chip" class="w-6 h-6 text-[#23b573]" />
             </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="w-12 h-12 bg-[#23b573] rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-device-phone-mobile" class="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile Apps</h3>
-                <p class="text-gray-600">Native and cross-platform mobile applications for iOS and Android.</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start space-x-4">
-              <div class="w-12 h-12 bg-[#23b573] rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-chart-bar" class="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold text-gray-900 mb-2">Data Analytics</h3>
-                <p class="text-gray-600">Transform your data into actionable insights with advanced analytics.</p>
-              </div>
-            </div>
-          </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">AI</h3>
+            <p class="text-gray-600 text-sm">Artificial Intelligence - Machine learning and neural networks that enable computers to learn, reason, and make decisions like humans.</p>
+          </UCard>
           
-          <div class="relative">
-            <div class="bg-gradient-to-br from-[#23b573]/20 to-[#23b573]/5 rounded-2xl p-8">
-              <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white rounded-lg p-4 shadow-sm">
-                  <div class="text-2xl font-bold text-[#23b573]">500+</div>
-                  <div class="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                <div class="bg-white rounded-lg p-4 shadow-sm">
-                  <div class="text-2xl font-bold text-[#23b573]">50+</div>
-                  <div class="text-sm text-gray-600">Happy Clients</div>
-                </div>
-                <div class="bg-white rounded-lg p-4 shadow-sm">
-                  <div class="text-2xl font-bold text-[#23b573]">24/7</div>
-                  <div class="text-sm text-gray-600">Support Available</div>
-                </div>
-                <div class="bg-white rounded-lg p-4 shadow-sm">
-                  <div class="text-2xl font-bold text-[#23b573]">99%</div>
-                  <div class="text-sm text-gray-600">Satisfaction Rate</div>
-                </div>
-              </div>
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-shield-check" class="w-6 h-6 text-[#23b573]" />
             </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">DeAI</h3>
+            <p class="text-gray-600 text-sm">Decentralized AI - AI systems distributed across blockchain networks, ensuring transparency and eliminating single points of failure.</p>
+          </UCard>
+          
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-cube" class="w-6 h-6 text-[#23b573]" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Blockchain</h3>
+            <p class="text-gray-600 text-sm">Distributed ledger technology that creates secure, transparent, and immutable records of transactions across a network.</p>
+          </UCard>
+          
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-currency-dollar" class="w-6 h-6 text-[#23b573]" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">DeFi</h3>
+            <p class="text-gray-600 text-sm">Decentralized Finance - Financial services built on blockchain technology, eliminating intermediaries and enabling peer-to-peer transactions.</p>
+          </UCard>
+          
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-cube-transparent" class="w-6 h-6 text-[#23b573]" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Ethereum</h3>
+            <p class="text-gray-600 text-sm">A decentralized platform that enables smart contracts and decentralized applications (dApps) to be built and run without downtime.</p>
+          </UCard>
+          
+          <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+            <div class="w-12 h-12 bg-[#23b573]/10 rounded-lg flex items-center justify-center mb-4">
+              <UIcon name="i-heroicons-currency-dollar" class="w-6 h-6 text-[#23b573]" />
+            </div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Bitcoin</h3>
+            <p class="text-gray-600 text-sm">The first and most well-known cryptocurrency, operating on a decentralized peer-to-peer network without central authority.</p>
+          </UCard>
+        </div>
+
+        <!-- Partner Projects Section -->
+        <div class="text-center">
+          <h3 class="text-2xl font-bold text-gray-900 mb-8">Our Flagship Open-Source Partners</h3>
+          <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="w-16 h-16 bg-[#23b573]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UIcon name="i-heroicons-globe-alt" class="w-8 h-8 text-[#23b573]" />
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">MOR.org</h4>
+              <p class="text-gray-600 text-sm mb-4">Our flagship open-source project focused on decentralized AI and blockchain solutions.</p>
+              <a href="https://mor.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#23b573] hover:text-[#1ea065] transition-colors">
+                Visit Project
+                <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4 ml-2" />
+              </a>
+            </UCard>
+            
+            <UCard class="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+              <div class="w-16 h-16 bg-[#23b573]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <UIcon name="i-heroicons-globe-alt" class="w-8 h-8 text-[#23b573]" />
+              </div>
+              <h4 class="text-lg font-semibold text-gray-900 mb-2">Morpheus.asia</h4>
+              <p class="text-gray-600 text-sm mb-4">Advanced AI and blockchain infrastructure for the Asia-Pacific region.</p>
+              <a href="https://morpheus.asia" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-[#23b573] hover:text-[#1ea065] transition-colors">
+                Visit Project
+                <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4 ml-2" />
+              </a>
+            </UCard>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50 relative">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Get in <span class="text-[#23b573]">Touch</span>
-          </h2>
-          <p class="text-xl text-gray-600">
-            Ready to start your next project? Let's discuss how we can help bring your vision to life.
-          </p>
-        </div>
-        
-        <UCard class="p-8">
-          <form class="space-y-6">
-            <div class="grid md:grid-cols-2 gap-6">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                <UInput placeholder="Enter your first name" />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                <UInput placeholder="Enter your last name" />
-              </div>
-            </div>
-            
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-              <UInput type="email" placeholder="Enter your email address" />
-            </div>
-            
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-              <UTextarea placeholder="Tell us about your project..." :rows="4" />
-            </div>
-            
-            <div class="text-center">
-              <UButton size="lg" color="green" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065] px-8 py-4">
-                Send Message
-              </UButton>
-            </div>
-          </form>
-        </UCard>
-      </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -226,11 +201,16 @@
           <div>
             <div class="flex items-center space-x-2 mb-4">
               <img src="/logo.png" alt="Inspirilab" class="h-8 w-auto" />
-              <span class="text-xl font-bold">Inspirilab</span>
             </div>
-            <p class="text-gray-400">
+            <p class="text-gray-400 mb-4">
               Where innovation meets inspiration. Creating solutions that transform ideas into reality.
             </p>
+            <div class="text-gray-400 text-sm">
+              <p class="mb-1">Level 3, Wisma Suria</p>
+              <p class="mb-1">Jalan Teknokrat 6</p>
+              <p class="mb-1">Cyberjaya 63000</p>
+              <p>Malaysia</p>
+            </div>
           </div>
           
           <div>
@@ -270,7 +250,7 @@
         </div>
         
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Inspirilab. All rights reserved.</p>
+          <p>&copy; 2025 Inspirilab. All rights reserved.</p>
         </div>
       </div>
     </footer>
