@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/* Custom styles for Inspirilab */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23b573;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1ea065;
+}
+
+/* Ensure proper loading of Tailwind utilities */
+@layer utilities {
+  .text-brand {
+    color: #23b573;
+  }
+  
+  .bg-brand {
+    background-color: #23b573;
+  }
+  
+  .border-brand {
+    border-color: #23b573;
+  }
+} 
