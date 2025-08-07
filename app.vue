@@ -6,22 +6,21 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
           <div class="flex items-center space-x-4">
-            <img src="/logo.png" alt="Inspirilab" class="h-8 w-auto" />
+            <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto" />
           </div>
-          <div class="hidden md:flex items-center space-x-8">
-            <a href="#home" class="text-gray-300 hover:text-[#23b573] transition-colors">Home</a>
-            <a href="#about" class="text-gray-300 hover:text-[#23b573] transition-colors">About</a>
-            <a href="#technologies" class="text-gray-300 hover:text-[#23b573] transition-colors">Technologies</a>
+          <div class="flex-1 flex justify-center">
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="#home" class="text-gray-300 hover:text-[#23b573] transition-colors">Home</a>
+              <a href="#about" class="text-gray-300 hover:text-[#23b573] transition-colors">About</a>
+              <a href="#technologies" class="text-gray-300 hover:text-[#23b573] transition-colors">Technologies</a>
+            </div>
           </div>
-          <UButton color="primary" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065]">
-            Get Started
-          </UButton>
         </div>
       </div>
     </nav>
 
     <!-- Hero Section with Parallax -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" class="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
       <!-- Parallax Background -->
       <div class="absolute inset-0 bg-gradient-to-br from-[#23b573]/10 to-white"></div>
       <div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(circle at 30px 30px, #23b573 2px, transparent 2px); background-size: 60px 60px;"></div>
@@ -34,7 +33,9 @@
       <!-- Main Content -->
       <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div class="mb-8">
-          <img src="/logo.png" alt="Inspirilab" class="h-24 w-auto mx-auto mb-8 animate-fade-in" />
+          <div class="inline-block bg-gray-900/80 rounded-2xl p-6 shadow-lg">
+            <img src="/logo.png" alt="Inspirilab" class="h-24 w-auto mx-auto mb-0 animate-fade-in" />
+          </div>
         </div>
         <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
           Welcome to
@@ -44,12 +45,6 @@
           Where innovation meets inspiration. We create cutting-edge solutions that transform ideas into reality.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <UButton size="lg" color="primary" variant="solid" class="bg-[#23b573] hover:bg-[#1ea065] text-lg px-8 py-4">
-            Explore Our Work
-          </UButton>
-          <UButton size="lg" variant="outline" class="border-[#23b573] text-[#23b573] hover:bg-[#23b573] hover:text-white text-lg px-8 py-4">
-            Learn More
-          </UButton>
         </div>
       </div>
       
@@ -200,7 +195,7 @@
         <div class="grid md:grid-cols-4 gap-8">
           <div>
             <div class="flex items-center space-x-2 mb-4">
-              <img src="/logo.png" alt="Inspirilab" class="h-8 w-auto" />
+              <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto" />
             </div>
             <p class="text-gray-400 mb-4">
               Where innovation meets inspiration. Creating solutions that transform ideas into reality.
@@ -210,41 +205,6 @@
               <p class="mb-1">Jalan Teknokrat 6</p>
               <p class="mb-1">Cyberjaya 63000</p>
               <p>Malaysia</p>
-            </div>
-          </div>
-          
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Services</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Web Development</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Mobile Apps</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Data Analytics</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Consulting</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Company</h3>
-            <ul class="space-y-2 text-gray-400">
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">About Us</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Our Team</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Careers</a></li>
-              <li><a href="#" class="hover:text-[#23b573] transition-colors">Contact</a></li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 class="text-lg font-semibold mb-4">Connect</h3>
-            <div class="flex space-x-4">
-              <a href="#" class="w-10 h-10 bg-[#23b573] rounded-full flex items-center justify-center hover:bg-[#1ea065] transition-colors">
-                <UIcon name="i-simple-icons-twitter" class="w-5 h-5" />
-              </a>
-              <a href="#" class="w-10 h-10 bg-[#23b573] rounded-full flex items-center justify-center hover:bg-[#1ea065] transition-colors">
-                <UIcon name="i-simple-icons-linkedin" class="w-5 h-5" />
-              </a>
-              <a href="#" class="w-10 h-10 bg-[#23b573] rounded-full flex items-center justify-center hover:bg-[#1ea065] transition-colors">
-                <UIcon name="i-simple-icons-github" class="w-5 h-5" />
-              </a>
             </div>
           </div>
         </div>
