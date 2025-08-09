@@ -8,12 +8,10 @@
           <div class="flex items-center space-x-4">
             <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto" />
           </div>
-          <div class="flex-1 flex justify-center">
-            <div class="hidden md:flex items-center space-x-8">
-              <a href="#home" class="text-gray-300 hover:text-[#23b573] transition-colors">Home</a>
-              <a href="#about" class="text-gray-300 hover:text-[#23b573] transition-colors">About</a>
-              <a href="#technologies" class="text-gray-300 hover:text-[#23b573] transition-colors">Technologies</a>
-            </div>
+          <div class="hidden md:flex items-center space-x-8 ml-auto">
+            <a href="#home" class="text-gray-300 hover:text-[#23b573] transition-colors">Home</a>
+            <a href="#about" class="text-gray-300 hover:text-[#23b573] transition-colors">About</a>
+            <a href="#technologies" class="text-gray-300 hover:text-[#23b573] transition-colors">Technologies</a>
           </div>
         </div>
       </div>
@@ -33,7 +31,7 @@
       <!-- Main Content -->
       <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
         <div class="mb-8">
-          <div class="inline-block bg-gray-900/80 rounded-2xl p-6 shadow-lg">
+          <div class="inline-block bg-gray-900 rounded-2xl px-4 shadow-lg">
             <img src="/logo.png" alt="Inspirilab" class="h-24 w-auto mx-auto mb-0 animate-fade-in" />
           </div>
         </div>
@@ -48,12 +46,7 @@
         </div>
       </div>
       
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-[#23b573] rounded-full flex justify-center">
-          <div class="w-1 h-3 bg-[#23b573] rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
+
     </section>
 
     <!-- About Section -->

@@ -4,6 +4,20 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
   css: ['~/assets/css/main.css'],
+  ui: {
+    global: true,
+    icons: ['heroicons', 'simple-icons']
+  },
+  colorMode: {
+    preference: 'light',
+    fallback: 'light',
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storageKey: 'nuxt-color-mode'
+  },
   app: {
     head: {
       link: [
