@@ -1,3 +1,7 @@
+<script setup>
+  import { computed } from 'vue'
+  const currentYear = computed(() => new Date().getFullYear())
+</script>
 <template>
   <UApp>
     <div class="min-h-screen bg-white">
@@ -244,7 +248,7 @@
 
           <!-- Bottom bar -->
           <div class="pt-8 text-center">
-            <p class="text-gray-500 text-s">&copy; 2025 Inspirilab. All rights reserved.</p>
+            <p class="text-gray-500 text-s">&copy; {{ currentYear }} Inspirilab. All rights reserved.</p>
           </div>
 
         </div>
