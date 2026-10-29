@@ -10,9 +10,11 @@ const l = computed(() => props.line ?? services.find((s) => s.slug === props.pro
   <!-- The whole card is clickable via the title link's ::after; the partner link sits above it -->
   <article class="group relative flex flex-col h-full overflow-hidden rounded-xl border-2 border-[var(--line)] bg-[var(--paper)] transition-colors"
     :class="project.url ? 'hover:border-[var(--ink)]' : ''">
-    <div class="h-32 flex items-center justify-center px-8 border-b-2 border-[var(--line)]" :class="project.logoOnDark ? 'bg-[var(--ink)]' : 'bg-[var(--mist)]'">
+    <div class="h-40 flex items-center justify-center px-6 py-4 border-b-2 border-[var(--line)]"
+      :class="project.logoBg ? '' : project.logoOnDark ? 'bg-[var(--ink)]' : 'bg-[var(--mist)]'"
+      :style="project.logoBg ? { background: project.logoBg } : undefined">
       <img v-if="project.logo" :src="project.logo" :alt="`${project.name} logo`" loading="lazy"
-        class="max-h-16 max-w-[70%] object-contain transition-transform duration-300 ease-out group-hover:scale-105" />
+        class="h-full max-w-[85%] object-contain transition-transform duration-300 ease-out group-hover:scale-105" />
       <span v-else class="text-2xl font-bold tracking-tight text-[var(--ink)]">{{ project.name }}</span>
     </div>
     <div class="p-6 md:p-7 flex-1">
