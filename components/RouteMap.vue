@@ -69,8 +69,8 @@ function go(st: Station) {
         <circle :cx="IX" :cy="IY" r="30" fill="var(--paper)" stroke="var(--ink)" stroke-width="12" />
         <circle :cx="IX" :cy="IY" r="9" fill="var(--ink)" />
       </svg>
-      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[21%]">
-        <p class="text-sm font-medium text-[var(--ink-2)] mb-2">Interchange</p>
+      <div class="absolute left-0 w-[21%] -translate-y-1/2" :style="{ top: `${(IY / 480) * 100}%` }">
+        <p class="absolute bottom-full left-0 mb-2 text-sm font-medium text-[var(--ink-2)]">Interchange</p>
         <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center text-center leading-snug">
           Start here: book a consultation
         </NuxtLink>

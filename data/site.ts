@@ -143,8 +143,7 @@ export const projects: Project[] = [
     url: 'https://luxtag.io',
     logo: '/logos/luxtag.png',
     category: 'Blockchain · Website',
-    service: 'blockchain',
-    also: ['web'],
+    service: 'web',
     description: 'Blockchain-based anti-counterfeiting and digital certificate solutions. We rebuilt its website and moved it off WordPress onto Cloudflare.',
     tags: ['Blockchain', 'Migration', 'Cloudflare']
   },
@@ -154,7 +153,6 @@ export const projects: Project[] = [
     logo: '/logos/jungle-coffee.jpg',
     category: 'Partner project',
     service: 'partners',
-    also: ['web'],
     description: 'Specialty green coffee sourced from Indonesia. A partner venture; we also built and run its website on Cloudflare.',
     tags: ['Partner', 'Coffee trade', 'Website']
   },
