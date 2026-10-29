@@ -91,6 +91,7 @@ export const services: Service[] = [
 export interface Project {
   name: string
   url?: string
+  partner?: { name: string; url: string } // collaboration partner, linked in the card
   logo?: string // project logo in /public/logos
   logoOnDark?: boolean // light logo: show it on the ink panel
   category: string
@@ -102,12 +103,14 @@ export interface Project {
 // TODO: add Storesini / SafeGate once its description and link are confirmed
 export const projects: Project[] = [
   {
-    name: 'PakcikLocation',
+    name: 'AuditGBP.my',
+    // TODO: switch to https://auditgbp.my once the domain is live; it does not resolve yet
     url: 'https://ai.pakciklocation.my',
     logo: '/logos/pakciklocation.jpg',
     category: 'SaaS & AI',
     service: 'saas-ai',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
+    partner: { name: 'PakCikLocation', url: 'https://pakciklocation.my' },
     tags: ['AI', 'SaaS', 'Cloudflare']
   },
   {
