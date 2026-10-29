@@ -71,14 +71,23 @@ function go(st: Station) {
       <div class="absolute left-0 w-[21%] -translate-y-1/2" :style="{ top: `${(IY / 480) * 100}%` }">
         <p class="absolute bottom-full left-0 mb-2 text-sm font-medium text-[var(--ink-2)]">Interchange</p>
         <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center text-center leading-snug">
-          Start here: free first consultation
+          Start here
         </NuxtLink>
+        <div class="free-note absolute top-full left-[8%] mt-1 flex items-start gap-1.5" aria-hidden="true">
+          <svg viewBox="0 0 40 44" class="free-arrow w-9 h-10 shrink-0 text-[var(--ink)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M34 40 C 14 38, 8 26, 10 6" /><path d="M3 13 L10 5 L17 12" />
+          </svg>
+          <span class="mt-5 -rotate-2 rounded-lg bg-[#f5a800] px-3 py-1.5 text-sm font-bold leading-tight text-[var(--ink)] shadow-[3px_3px_0_var(--ink)] whitespace-nowrap">
+            Your first consultation<br />is <span class="uppercase tracking-wide">free</span>
+          </span>
+        </div>
       </div>
     </div>
 
     <!-- Phone: the same network read as a strip map -->
     <div class="md:hidden">
-      <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: free first consultation</NuxtLink>
+      <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: book a consultation</NuxtLink>
+      <p class="mt-3 text-center"><span class="inline-block -rotate-1 rounded-lg bg-[#f5a800] px-3 py-1 text-sm font-bold text-[var(--ink)] shadow-[3px_3px_0_var(--ink)]">Your first consultation is <span class="uppercase tracking-wide">free</span></span></p>
       <ol class="mt-8 space-y-7">
         <li v-for="l in lines" :key="l.slug">
           <NuxtLink :to="`/services#${l.slug}`" class="flex items-center gap-3 font-semibold text-[var(--ink)]">
@@ -131,4 +140,7 @@ function go(st: Station) {
 }
 .map-station:hover circle, .map-station:focus-visible circle { r: 16; }
 .map-station:focus-visible text { text-decoration: underline; }
+.free-arrow { animation: nudge 1.8s var(--ease-out, ease-out) infinite; transform-origin: 50% 100%; }
+@keyframes nudge { 0%, 60%, 100% { transform: translate3d(0,0,0) } 30% { transform: translate3d(-2px,-5px,0) } }
+@media (prefers-reduced-motion: reduce) { .free-arrow { animation: none } }
 </style>
