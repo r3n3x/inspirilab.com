@@ -25,7 +25,7 @@ const filtered = computed(() => {
       subtitle="Products, websites and solutions we have built and run for clients and partners."
     />
 
-    <section class="py-20 md:py-28">
+    <section class="pt-6 pb-20 md:pb-28">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter projects by category">
           <button

@@ -11,9 +11,10 @@ const l = computed(() => props.line ?? services.find((s) => s.slug === props.pro
     :rel="project.url ? 'noopener noreferrer' : undefined"
     class="group flex flex-col h-full overflow-hidden rounded-xl border-2 border-[var(--line)] bg-[var(--paper)] transition-colors"
     :class="project.url ? 'hover:border-[var(--ink)]' : ''">
-    <div v-if="project.image" class="aspect-[16/10] overflow-hidden border-b-2 border-[var(--line)] bg-[var(--mist)]">
-      <img :src="project.image" :alt="`${project.name} website`" loading="lazy" width="1440" height="900"
-        class="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]" />
+    <div class="h-32 flex items-center justify-center px-8 border-b-2 border-[var(--line)]" :class="project.logoOnDark ? 'bg-[var(--ink)]' : 'bg-[var(--mist)]'">
+      <img v-if="project.logo" :src="project.logo" :alt="`${project.name} logo`" loading="lazy"
+        class="max-h-16 max-w-[70%] object-contain transition-transform duration-300 ease-out group-hover:scale-105" />
+      <span v-else class="text-2xl font-bold tracking-tight text-[var(--ink)]">{{ project.name }}</span>
     </div>
     <div class="p-6 md:p-7 flex-1">
     <div class="flex items-center justify-between gap-3 mb-4">
