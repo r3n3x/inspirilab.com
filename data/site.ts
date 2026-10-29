@@ -102,8 +102,9 @@ export interface Project {
 // TODO: add Storesini / SafeGate once its description and link are confirmed
 export const projects: Project[] = [
   {
-    name: 'PakcikLocation GBP Audit',
+    name: 'PakcikLocation',
     url: 'https://ai.pakciklocation.my',
+    logo: '/logos/pakciklocation.jpg',
     category: 'SaaS & AI',
     service: 'saas-ai',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
