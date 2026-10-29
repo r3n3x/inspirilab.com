@@ -19,7 +19,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* no global smooth scroll: it raced the page transition. Anchors scroll smoothly via app/router.options.ts */
   color: var(--ink);
   background: var(--paper);
 }
@@ -177,13 +177,80 @@ a {
 @media (min-width: 768px) {
   .spine.live::before { background: var(--line); }
   .spine.live .spine-fill {
-    display: block; position: absolute; left: 1.05rem; top: 0; width: 8px; height: var(--fill, 0%);
-    background: var(--ink); border-radius: 4px; transition: height 120ms linear;
+    display: block; position: absolute; left: 1.05rem; top: 0; bottom: 0; width: 8px;
+    background: var(--ink); border-radius: 4px;
+    transform-origin: 50% 0; transform: scaleY(var(--fill-s, 0)); will-change: transform;
   }
-  .spine.live .stop::before { border-color: var(--line); transition: border-color .3s, background-color .3s, transform .3s cubic-bezier(.34,1.56,.64,1); z-index: 1; }
+  .spine.live .stop::before { border-color: var(--line); transition: border-color .3s, background-color .3s, transform .3s cubic-bezier(.16,1,.3,1); z-index: 1; }
   .spine.live .stop.reached::before { border-color: var(--ink); background: var(--brand); transform: scale(1.12); }
 }
 @media (prefers-reduced-motion: reduce) {
   .spine.live .spine-fill { transition: none; }
   .spine.live .stop::before { transition: none; }
+}
+
+/* ---- Motion: navigation & continuity ---- */
+:root { --ease-out: cubic-bezier(.16, 1, .3, 1); }
+
+/* Nav lifts off the page once scrolled */
+.site-nav { border-color: var(--line); transition: box-shadow .3s var(--ease-out), border-color .3s; }
+.site-nav.is-scrolled { border-color: transparent; box-shadow: 0 8px 24px -16px rgba(13, 31, 23, .45); }
+
+/* Nav track: a faint rail under the links, with one "train" that rides to the current page */
+.nav-track::before {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 3px;
+  border-radius: 3px; background: var(--line); opacity: 0; transition: opacity .3s;
+}
+.nav-track:hover::before { opacity: 1; }
+/* Only transform/opacity animate here, so the browser can run it on the compositor (no layout per frame) */
+.nav-train {
+  position: absolute; left: 0; bottom: -2px; width: 100px; height: 3px; border-radius: 3px; background: var(--ink);
+  transform-origin: 0 50%; will-change: transform;
+  opacity: 0; transition: transform .5s var(--ease-out), opacity .2s;
+}
+.nav-light { /* the train's headlight: a small disc at the front */
+  position: absolute; left: -4.5px; bottom: -5px; width: 9px; height: 9px;
+  border-radius: 999px; background: var(--paper); border: 2.5px solid var(--ink);
+  will-change: transform; opacity: 0; transition: transform .5s var(--ease-out), opacity .2s;
+}
+.nav-train.is-on, .nav-light.is-on { opacity: 1; }
+.nav-link:hover { color: var(--ink); }
+
+/* Page change: the old page pulls out to the left, the new one arrives from the right */
+.page-enter-active { transition: opacity .42s var(--ease-out), transform .42s var(--ease-out); will-change: transform, opacity; }
+.page-leave-active { transition: opacity .18s ease-in, transform .18s ease-in; will-change: transform, opacity; }
+.page-enter-from { opacity: 0; transform: translateX(32px); }
+.page-leave-to { opacity: 0; transform: translateX(-24px); }
+
+/* Mobile menu unrolls from the top edge */
+.menu-enter-active { transition: clip-path .35s var(--ease-out), opacity .25s; }
+.menu-leave-active { transition: clip-path .2s ease-in, opacity .2s; }
+.menu-enter-from, .menu-leave-to { clip-path: inset(0 0 100% 0); opacity: 0; }
+.menu-enter-to, .menu-leave-from { clip-path: inset(0 0 0 0); }
+
+/* Lists arrive as lists: items rise in with a short, capped stagger (only once JS is live) */
+.reveal-ready > * { opacity: 0; transform: translateY(16px); }
+.reveal-ready.revealed > * {
+  opacity: 1; transform: none;
+  transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+  transition-delay: calc(min(var(--i, 0), 6) * 70ms);
+}
+
+/* Work filter: cards glide to their new places */
+.card-move { transition: transform .45s var(--ease-out); }
+.card-enter-active { transition: opacity .35s var(--ease-out), transform .35s var(--ease-out); }
+.card-enter-from { opacity: 0; transform: scale(.97); }
+.card-leave-active { display: none; }
+
+/* Buttons acknowledge the press */
+.btn-primary:active, .btn-secondary:active { transform: scale(.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-from, .page-leave-to { transform: none; }
+  .page-enter-active, .page-leave-active { transition: opacity .15s linear; }
+  .nav-train { transition: opacity .2s; }
+  .reveal-ready > * { opacity: 1; transform: none; }
+  .card-move, .card-enter-active { transition: none; }
+  .menu-enter-active, .menu-leave-active { transition: opacity .15s; }
+  .menu-enter-from, .menu-leave-to { clip-path: none; }
 }

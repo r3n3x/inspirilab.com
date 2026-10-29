@@ -107,6 +107,7 @@ export interface Project {
   partner?: { name: string; url: string } // collaboration partner, linked in the card
   logo?: string // project logo in /public/logos
   logoOnDark?: boolean // light logo: show it on the ink panel
+  logoBg?: string // panel colour matching the logo's own background, so the logo fills the panel
   category: string
   service: string // matches Service.slug
   also?: string[] // other lines this project appears on in the route map
@@ -121,6 +122,7 @@ export const projects: Project[] = [
     name: 'AuditGBP.my',
     url: 'https://auditgbp.my',
     logo: '/logos/pakciklocation.jpg',
+    logoBg: '#ffffff',
     category: 'SaaS & AI',
     service: 'saas-ai',
     status: 'Go-live Q4/2026',
@@ -151,6 +153,7 @@ export const projects: Project[] = [
     name: 'The Jungle Coffee',
     url: 'https://thejunglecoffee.com',
     logo: '/logos/jungle-coffee.jpg',
+    logoBg: '#53a447',
     category: 'Partner project',
     service: 'partners',
     description: 'Specialty green coffee sourced from Indonesia. A partner venture; we also built and run its website on Cloudflare.',
@@ -160,15 +163,17 @@ export const projects: Project[] = [
     name: 'ChatterBooth',
     url: 'https://chatterbooth.app',
     logo: '/logos/chatterbooth.png',
+    logoBg: '#faedd9',
     category: 'Partner project',
     service: 'partners',
     description: 'An app for anonymous voice and chat conversations, built by a founding team from Bandung, Indonesia. Rene advises the project.',
     tags: ['Advisory', 'App', 'Wellbeing']
   },
   {
-    name: 'Heiko',
+    name: 'Heiko PLT',
     url: 'https://heiko.my',
     logo: '/logos/heiko.png',
+    logoBg: '#ffffff',
     category: 'Partner project',
     service: 'partners',
     description: 'ESG consultancy helping Malaysian SMEs with sustainability compliance and measurable impact.',

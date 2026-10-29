@@ -16,7 +16,7 @@ function update() {
   const r = el.getBoundingClientRect()
   const mark = window.innerHeight * 0.6
   const pct = Math.min(100, Math.max(0, ((mark - r.top) / r.height) * 100))
-  el.style.setProperty('--fill', `${pct}%`)
+  el.style.setProperty('--fill-s', String(pct / 100))
   el.querySelectorAll<HTMLElement>('.stop').forEach((s) => s.classList.toggle('reached', s.getBoundingClientRect().top < mark))
 }
 const onScroll = () => { if (!frame) frame = requestAnimationFrame(update) }
@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
             </div>
             <div class="lg:col-span-7">
               <h3 class="text-base font-semibold text-[var(--ink-2)] mb-2">What he advises on</h3>
-              <ul class="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+              <ul v-reveal class="divide-y divide-[var(--line)] border-y border-[var(--line)]">
                 <li v-for="o in offerings" :key="o.title" class="flex gap-4 py-4">
                   <UIcon :name="o.icon" class="w-5 h-5 mt-0.5 shrink-0 text-[var(--ink)]" aria-hidden="true" />
                   <div>
@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
           <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Five lines, one team</h2>
           <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">From strategy to a live product: we design, build and run the software behind each line.</p>
-          <div class="mt-10 space-y-3">
+          <div v-reveal class="mt-10 space-y-3">
             <NuxtLink v-for="s in services" :key="s.slug" :to="`/services#${s.slug}`"
               class="group grid md:grid-cols-12 gap-3 md:gap-6 items-center rounded-xl border-2 border-transparent hover:border-[var(--ink)] p-4 md:p-5 transition-colors">
               <span class="md:col-span-1 h-3.5 w-14 rounded-full" :style="{ background: s.color }" aria-hidden="true" />
@@ -125,7 +125,7 @@ onBeforeUnmount(() => {
               All projects <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" aria-hidden="true" />
             </NuxtLink>
           </div>
-          <div class="mt-10 grid md:grid-cols-2 gap-5">
+          <div v-reveal class="mt-10 grid md:grid-cols-2 gap-5">
             <ProjectCard v-for="p in projects" :key="p.name" :project="p" :line="lineOf(p.service)" />
           </div>
         </section>

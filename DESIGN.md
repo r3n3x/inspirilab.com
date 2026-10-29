@@ -24,6 +24,8 @@ The site is a rail network. Each build service is a coloured line, each real pro
 - Load: lines draw out of the interchange one after another (`.draw`), stations pop in as each line arrives (`.pop`); the station sign rises in (`.rise`).
 - Hover/focus a line: a white train disc runs along it (`.train`, SVG animateMotion).
 - Scroll (home, desktop): the route spine fills down the page and each section's stop turns green when reached (`.spine.live`); without JS the spine shows full.
+- Navigation: a rail track under the nav links with one ink 'train' (with a headlight disc) that glides to the current page; the nav gains a soft shadow once scrolled; a five-colour rail line runs across the top while a page loads; pages pull out left and arrive from the right (page transition); the mobile menu unrolls from the top.
+- Lists (offerings, service rows, team, project cards) rise in once with a capped 70ms stagger (-reveal, content visible without JS); Work filter cards glide to new positions; buttons scale slightly on press.
 - All of it switches off under prefers-reduced-motion. Project cards show the project's logo on a mist panel (`/public/logos`, set via `logo` in data/site.ts), scaling slightly on hover; with no logo the panel shows the name as a wordmark.
 
 ## Rules

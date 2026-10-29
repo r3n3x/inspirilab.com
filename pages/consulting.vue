@@ -6,7 +6,7 @@ useHead({ title: 'Consulting | Inspirilab' })
 
 <template>
   <div>
-    <PageHeader title="Consulting with" highlight="Mr Rene" :subtitle="rene.headline" />
+    <PageHeader title="Consulting with" highlight="Mr. Rene" :subtitle="rene.headline" />
 
     <!-- Bio -->
     <section class="py-20 md:py-28">
