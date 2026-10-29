@@ -38,7 +38,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
               <p class="text-[0.875rem] text-[var(--ink-2)] mb-6">{{ rene.role }}</p>
               <ul class="space-y-3 mb-6">
                 <li v-for="c in rene.credentials" :key="c" class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check" class="w-5 h-5 text-[var(--brand-deep)] shrink-0 mt-0.5" />
+                  <UIcon name="i-heroicons-check" aria-hidden="true" class="w-5 h-5 text-[var(--brand-deep)] shrink-0 mt-0.5" />
                   <span class="text-[0.9375rem] text-[var(--ink)]">{{ c }}</span>
                 </li>
               </ul>
@@ -47,7 +47,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
                 class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
               >
                 About Rene
-                <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1" />
+                <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
               </NuxtLink>
             </div>
           </div>
@@ -68,7 +68,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
             class="flex items-start gap-4 py-6 border-b border-[var(--line)]"
           >
             <div class="w-10 h-10 bg-[var(--paper)] rounded-[10px] flex items-center justify-center shrink-0">
-              <UIcon :name="o.icon" class="w-5 h-5 text-[var(--brand-deep)]" />
+              <UIcon :name="o.icon" aria-hidden="true" class="w-5 h-5 text-[var(--brand-deep)]" />
             </div>
             <div>
               <h3 class="text-[1.25rem] font-semibold text-[var(--ink)] mb-1">{{ o.title }}</h3>
@@ -82,7 +82,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
             class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
           >
             See consulting in detail
-            <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1" />
+            <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
           </NuxtLink>
         </div>
       </div>
@@ -113,6 +113,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
               <p class="text-[0.9375rem] leading-[1.6] text-[var(--ink-2)] flex-1">{{ s.summary }}</p>
               <UIcon
                 name="i-heroicons-arrow-right"
+                aria-hidden="true"
                 class="w-5 h-5 text-[var(--ink-2)] group-hover:text-[var(--brand-deep)] group-hover:translate-x-1 transition-all duration-150 shrink-0"
               />
             </div>
@@ -133,7 +134,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
             class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150 shrink-0"
           >
             All projects
-            <UIcon name="i-heroicons-arrow-right" class="w-4 h-4 ml-1" />
+            <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
           </NuxtLink>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
@@ -161,7 +162,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
                 class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
               >
                 Visit
-                <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4 ml-1" />
+                <UIcon name="i-heroicons-arrow-top-right-on-square" aria-hidden="true" class="w-4 h-4 ml-1" />
               </a>
             </div>
             <p class="text-[0.9375rem] leading-[1.6] text-[var(--ink-2)]">{{ p.description }}</p>
