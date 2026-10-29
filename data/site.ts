@@ -85,16 +85,32 @@ export const services: Service[] = [
       'Workshops, training and speaking',
       'Led by our Vice President, Rene Fischer-Bernard'
     ]
+  },
+  {
+    slug: 'partners',
+    short: 'Partners & Incubation',
+    color: '#7b3fa0',
+    icon: 'i-heroicons-users',
+    title: 'Partner Projects & Incubation',
+    summary: 'Ventures we partner with, advise or help incubate, from early idea to running business.',
+    points: [
+      'Advisory for founding teams',
+      'Product and technology support',
+      'Partnerships across Malaysia and Indonesia'
+    ]
   }
 ]
 
 export interface Project {
   name: string
   url?: string
+  partner?: { name: string; url: string } // collaboration partner, linked in the card
   logo?: string // project logo in /public/logos
   logoOnDark?: boolean // light logo: show it on the ink panel
   category: string
   service: string // matches Service.slug
+  also?: string[] // other lines this project appears on in the route map
+  status?: string // e.g. go-live note, shown as a badge on the card
   description: string
   tags: string[]
 }
@@ -102,11 +118,14 @@ export interface Project {
 // TODO: add Storesini / SafeGate once its description and link are confirmed
 export const projects: Project[] = [
   {
-    name: 'PakcikLocation GBP Audit',
-    url: 'https://ai.pakciklocation.my',
+    name: 'AuditGBP.my',
+    url: 'https://auditgbp.my',
+    logo: '/logos/pakciklocation.jpg',
     category: 'SaaS & AI',
     service: 'saas-ai',
+    status: 'Go-live Q4/2026',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
+    partner: { name: 'PakCikLocation', url: 'https://pakciklocation.my' },
     tags: ['AI', 'SaaS', 'Cloudflare']
   },
   {
@@ -124,7 +143,7 @@ export const projects: Project[] = [
     url: 'https://luxtag.io',
     logo: '/logos/luxtag.png',
     category: 'Blockchain · Website',
-    service: 'blockchain',
+    service: 'web',
     description: 'Blockchain-based anti-counterfeiting and digital certificate solutions. We rebuilt its website and moved it off WordPress onto Cloudflare.',
     tags: ['Blockchain', 'Migration', 'Cloudflare']
   },
@@ -132,10 +151,28 @@ export const projects: Project[] = [
     name: 'The Jungle Coffee',
     url: 'https://thejunglecoffee.com',
     logo: '/logos/jungle-coffee.jpg',
-    category: 'Website',
-    service: 'web',
-    description: 'Website for a specialty coffee brand sourcing from Indonesia, re-platformed onto Cloudflare to cut hosting costs.',
-    tags: ['Website', 'Migration', 'Cloudflare']
+    category: 'Partner project',
+    service: 'partners',
+    description: 'Specialty green coffee sourced from Indonesia. A partner venture; we also built and run its website on Cloudflare.',
+    tags: ['Partner', 'Coffee trade', 'Website']
+  },
+  {
+    name: 'ChatterBooth',
+    url: 'https://chatterbooth.app',
+    logo: '/logos/chatterbooth.png',
+    category: 'Partner project',
+    service: 'partners',
+    description: 'An app for anonymous voice and chat conversations, built by a founding team from Bandung, Indonesia. Rene advises the project.',
+    tags: ['Advisory', 'App', 'Wellbeing']
+  },
+  {
+    name: 'Heiko',
+    url: 'https://heiko.my',
+    logo: '/logos/heiko.png',
+    category: 'Partner project',
+    service: 'partners',
+    description: 'ESG consultancy helping Malaysian SMEs with sustainability compliance and measurable impact.',
+    tags: ['Partner', 'ESG', 'Sustainability']
   }
 ]
 
@@ -184,4 +221,12 @@ export const talks = [
   { year: '2021', title: 'Symbol Hackathon, Mentor', place: 'Online' },
   { year: '2019', title: 'Keynote, World Blockchain Summit', place: 'Kuala Lumpur, Malaysia' },
   { year: '2018', title: 'Intro to Blockchain and Use-Cases', place: 'Moscow, Russia' }
+]
+
+// Management team. Roles are taken from each person's LinkedIn headline; confirm wording with them.
+export const team = [
+  { name: 'Rene Fischer-Bernard', initials: 'RF', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
+  { name: 'Marcus Toy', initials: 'MT', role: 'Serial founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
+  { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
+  { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
 ]
