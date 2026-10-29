@@ -26,7 +26,7 @@ function submit() {
     <PageHeader
       title="Get in"
       highlight="touch"
-      subtitle="Book a consultation with Rene, or tell us about a product you want built."
+      subtitle="Book a free first consultation with our team, or tell us about a product you want built."
     />
 
     <section class="py-20 md:py-28">
@@ -90,19 +90,10 @@ function submit() {
             <p class="text-[var(--ink-2)] mb-8">Send us a message on LinkedIn and we will get back to you.</p>
             <div class="flex flex-col items-start gap-3">
               <a
-                :href="links.reneLinkedIn"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn-primary justify-center"
-              >
-                Book a consultation with Rene
-                <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />
-              </a>
-              <a
                 :href="links.companyLinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:border-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+                class="btn-primary justify-center"
               >
                 Message Inspirilab
                 <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />
@@ -140,24 +131,11 @@ function submit() {
                     <UIcon name="i-heroicons-arrow-up-right" class="w-3.5 h-3.5" />
                   </a>
                 </li>
-                <li>
-                  <a
-                    :href="links.reneLinkedIn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1.5 text-[var(--brand-deep)] hover:underline"
-                  >
-                    Rene Fischer-Bernard
-                    <UIcon name="i-heroicons-arrow-up-right" class="w-3.5 h-3.5" />
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <CtaBanner />
   </div>
 </template>

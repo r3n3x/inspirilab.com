@@ -33,7 +33,7 @@ useHead({ title: 'Consulting | Inspirilab' })
             </a>
             <NuxtLink to="/contact?type=consulting"
               class="btn-primary mt-6 block w-full text-center">
-              Book a consultation
+              Book a free first consultation
             </NuxtLink>
           </div>
         </div>

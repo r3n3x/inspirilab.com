@@ -76,7 +76,7 @@ onBeforeUnmount(() => {
                 </li>
               </ul>
               <div class="mt-8 flex flex-wrap gap-3">
-                <NuxtLink to="/contact?type=consulting" class="btn-primary">Book a consultation</NuxtLink>
+                <NuxtLink to="/contact?type=consulting" class="btn-primary">Book a free first consultation</NuxtLink>
                 <NuxtLink to="/consulting" class="btn-secondary">About Rene</NuxtLink>
               </div>
             </div>

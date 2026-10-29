@@ -71,14 +71,14 @@ function go(st: Station) {
       <div class="absolute left-0 w-[21%] -translate-y-1/2" :style="{ top: `${(IY / 480) * 100}%` }">
         <p class="absolute bottom-full left-0 mb-2 text-sm font-medium text-[var(--ink-2)]">Interchange</p>
         <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center text-center leading-snug">
-          Start here: book a consultation
+          Start here: free first consultation
         </NuxtLink>
       </div>
     </div>
 
     <!-- Phone: the same network read as a strip map -->
     <div class="md:hidden">
-      <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: book a consultation</NuxtLink>
+      <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: free first consultation</NuxtLink>
       <ol class="mt-8 space-y-7">
         <li v-for="l in lines" :key="l.slug">
           <NuxtLink :to="`/services#${l.slug}`" class="flex items-center gap-3 font-semibold text-[var(--ink)]">

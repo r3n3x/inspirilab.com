@@ -1,9 +1,9 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string; text?: string; to?: string; label?: string }>(), {
   title: 'Talk to us about your next step',
-  text: 'Book a consultation with Rene and the team on blockchain, AI or digital innovation, or tell us about a product you want built.',
+  text: 'Book a free first consultation with our team on blockchain, AI or digital innovation, or tell us about a product you want built.',
   to: '/contact?type=consulting',
-  label: 'Book a consultation'
+  label: 'Book a free first consultation'
 })
 </script>
 
