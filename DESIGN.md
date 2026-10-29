@@ -21,7 +21,10 @@ The site is a rail network. Each build service is a coloured line, each real pro
 
 ## Interaction & motion
 - Signature: hovering or focusing a line (legend or the line itself) isolates it; other lines drop to 16% opacity.
-- Station sign rises in on load (`.rise`), off under reduced motion. Everything else: 150–200ms colour/transform transitions.
+- Load: lines draw out of the interchange one after another (`.draw`), stations pop in as each line arrives (`.pop`); the station sign rises in (`.rise`).
+- Hover/focus a line: a white train disc runs along it (`.train`, SVG animateMotion).
+- Scroll (home, desktop): the route spine fills down the page and each section's stop turns green when reached (`.spine.live`); without JS the spine shows full.
+- All of it switches off under prefers-reduced-motion. Project cards show live-site screenshots (`/public/work`, set via `image` in data/site.ts) that zoom slightly on hover.
 
 ## Rules
 - No eyebrow labels, section numbers, gradient text, glass, blobs or grids of identical icon cards.

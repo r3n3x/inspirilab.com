@@ -91,6 +91,7 @@ export const services: Service[] = [
 export interface Project {
   name: string
   url?: string
+  image?: string // screenshot in /public/work
   category: string
   service: string // matches Service.slug
   description: string
@@ -101,7 +102,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'PakcikLocation GBP Audit',
-    url: 'https://auditgbp.my',
+    url: 'https://ai.pakciklocation.my',
+    image: '/work/pakciklocation.jpg',
     category: 'SaaS & AI',
     service: 'saas-ai',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
@@ -110,6 +112,7 @@ export const projects: Project[] = [
   {
     name: 'BrandTag',
     url: 'https://brandtag.io',
+    image: '/work/brandtag.jpg',
     category: 'Blockchain SaaS',
     service: 'blockchain',
     description: 'A blockchain-powered SaaS that lets brands engage consumers with product stories and authenticity proofs via NFC and QR codes.',
@@ -118,6 +121,7 @@ export const projects: Project[] = [
   {
     name: 'LuxTag',
     url: 'https://luxtag.io',
+    image: '/work/luxtag.jpg',
     category: 'Blockchain · Website',
     service: 'blockchain',
     description: 'Blockchain-based anti-counterfeiting and digital certificate solutions. We rebuilt its website and moved it off WordPress onto Cloudflare.',
@@ -126,6 +130,7 @@ export const projects: Project[] = [
   {
     name: 'The Jungle Coffee',
     url: 'https://thejunglecoffee.com',
+    image: '/work/jungle-coffee.jpg',
     category: 'Website',
     service: 'web',
     description: 'Website for a specialty coffee brand sourcing from Indonesia, re-platformed onto Cloudflare to cut hosting costs.',

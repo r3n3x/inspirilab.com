@@ -50,12 +50,16 @@ function go(st: Station) {
     <div class="relative hidden md:block">
       <svg viewBox="0 0 1200 440" class="w-full h-auto" role="group" aria-label="Inspirilab route map: four service lines leaving one consultation interchange">
         <line x1="250" :y1="IY" :x2="IX" :y2="IY" stroke="var(--ink)" stroke-width="10" stroke-linecap="round" />
-        <g v-for="l in lines" :key="l.slug" class="transition-opacity duration-200" :opacity="dim(l.slug) ? 0.16 : 1"
+        <g v-for="(l, li) in lines" :key="l.slug" class="transition-opacity duration-200" :opacity="dim(l.slug) ? 0.16 : 1"
           @mouseenter="active = l.slug" @mouseleave="active = null">
-          <path :d="l.d" :stroke="l.color" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+          <path :id="`line-${l.slug}`" :d="l.d" :stroke="l.color" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"
+            pathLength="1" class="draw" :style="{ animationDelay: `${300 + li * 220}ms` }" />
+          <circle v-if="active === l.slug" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5" class="train">
+            <animateMotion dur="2.6s" repeatCount="indefinite" rotate="auto"><mpath :href="`#line-${l.slug}`" /></animateMotion>
+          </circle>
           <text :x="IX + 270" :y="l.y - 20" class="map-line">{{ l.short }}</text>
-          <a v-for="st in l.stations" :key="st.name" :href="st.href" :target="st.external ? '_blank' : undefined"
-            :rel="st.external ? 'noopener' : undefined" class="map-station" @click.prevent="go(st)">
+          <a v-for="(st, si) in l.stations" :key="st.name" :href="st.href" :target="st.external ? '_blank' : undefined"
+            :rel="st.external ? 'noopener' : undefined" class="map-station pop" :style="{ animationDelay: `${700 + li * 220 + si * 120}ms` }" @click.prevent="go(st)">
             <title>{{ st.ghost ? 'Your project: get in touch' : st.name }}</title>
             <circle :cx="st.x" :cy="l.y" r="13" fill="var(--paper)" :stroke="st.ghost ? l.color : 'var(--ink)'"
               :stroke-width="st.ghost ? 4 : 6" :stroke-dasharray="st.ghost ? '5 5' : undefined" />
@@ -114,6 +118,15 @@ function go(st: Station) {
 .map-stop { font: 500 15px 'Public Sans Variable', sans-serif; fill: var(--ink); }
 .map-ghost { font: italic 500 14px 'Public Sans Variable', sans-serif; fill: var(--ink-2); }
 .map-station { cursor: pointer; outline: none; }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1100ms cubic-bezier(.65,0,.35,1) forwards; }
+.pop { transform-box: fill-box; transform-origin: center; animation: pop 420ms cubic-bezier(.34,1.56,.64,1) both; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .draw { animation: none; stroke-dashoffset: 0; }
+  .pop { animation: none; }
+  .train { display: none; }
+}
 .map-station:hover circle, .map-station:focus-visible circle { r: 16; }
 .map-station:focus-visible text { text-decoration: underline; }
 </style>

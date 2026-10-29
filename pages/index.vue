@@ -1,9 +1,36 @@
 <script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { services, projects, partners, rene, offerings } from '~/data/site'
 
 useHead({ title: 'Inspirilab | Technology consulting & product development' })
 
 const lineOf = (slug: string) => services.find((s) => s.slug === slug)
+
+// Route spine: fills down the page as you scroll; each section's stop lights when reached.
+const spine = ref<HTMLElement | null>(null)
+let frame = 0
+function update() {
+  frame = 0
+  const el = spine.value
+  if (!el) return
+  const r = el.getBoundingClientRect()
+  const mark = window.innerHeight * 0.6
+  const pct = Math.min(100, Math.max(0, ((mark - r.top) / r.height) * 100))
+  el.style.setProperty('--fill', `${pct}%`)
+  el.querySelectorAll<HTMLElement>('.stop').forEach((s) => s.classList.toggle('reached', s.getBoundingClientRect().top < mark))
+}
+const onScroll = () => { if (!frame) frame = requestAnimationFrame(update) }
+onMounted(() => {
+  spine.value?.classList.add('live')
+  update()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  window.addEventListener('resize', onScroll)
+})
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll)
+  window.removeEventListener('resize', onScroll)
+  if (frame) cancelAnimationFrame(frame)
+})
 </script>
 
 <template>
@@ -34,7 +61,8 @@ const lineOf = (slug: string) => services.find((s) => s.slug === slug)
 
     <!-- The route continues: every section is a stop -->
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="spine pb-6">
+      <div ref="spine" class="spine pb-6">
+        <div class="spine-fill" aria-hidden="true" />
         <!-- Stop 1: the interchange -->
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
           <div class="grid lg:grid-cols-12 gap-10">
