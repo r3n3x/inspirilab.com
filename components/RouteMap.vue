@@ -111,8 +111,8 @@ function go(st: Station) {
 
 <style scoped>
 .map-line { font: 700 17px 'Schibsted Grotesk Variable', sans-serif; fill: var(--ink); letter-spacing: -0.01em; }
-.map-stop { font: 500 15px 'Geist Variable', sans-serif; fill: var(--ink); }
-.map-ghost { font: italic 500 14px 'Geist Variable', sans-serif; fill: var(--ink-2); }
+.map-stop { font: 500 15px 'Public Sans Variable', sans-serif; fill: var(--ink); }
+.map-ghost { font: italic 500 14px 'Public Sans Variable', sans-serif; fill: var(--ink-2); }
 .map-station { cursor: pointer; outline: none; }
 .map-station:hover circle, .map-station:focus-visible circle { r: 16; }
 .map-station:focus-visible text { text-decoration: underline; }

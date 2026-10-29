@@ -1,5 +1,5 @@
 @import "@fontsource-variable/schibsted-grotesk";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/public-sans";
 @import "tailwindcss";
 @import "@nuxt/ui";
 
@@ -26,7 +26,7 @@ html {
 
 @layer base {
 body {
-  font-family: 'Geist Variable', system-ui, sans-serif;
+  font-family: 'Public Sans Variable', system-ui, sans-serif;
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ink);
