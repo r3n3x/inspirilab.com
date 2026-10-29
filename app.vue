@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch, nextTick, onMounted, onBeforeUnmount } from 'vue'
 import { nav, links, address, services } from '~/data/site'
+import { pendingScroll } from '~/app/router.options'
 
 const currentYear = computed(() => new Date().getFullYear())
 const menuOpen = ref(false)
@@ -35,6 +36,13 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', placeMarker)
 })
 watch(() => route.path, () => { menuOpen.value = false; nextTick(placeMarker) })
+
+// Land the new page's scroll position in the gap between the old page leaving and the new one arriving.
+function landScroll() {
+  const el = pendingScroll.hash ? document.querySelector<HTMLElement>(pendingScroll.hash) : null
+  const top = el ? el.getBoundingClientRect().top + window.scrollY - 80 : pendingScroll.top
+  window.scrollTo({ top, left: 0, behavior: 'instant' })
+}
 </script>
 
 <template>
@@ -113,7 +121,7 @@ watch(() => route.path, () => { menuOpen.value = false; nextTick(placeMarker) })
       </nav>
 
       <main class="flex-1">
-        <NuxtPage />
+        <NuxtPage :transition="{ name: 'page', mode: 'out-in', onAfterLeave: landScroll }" />
       </main>
 
       <!-- Footer -->

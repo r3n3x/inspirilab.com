@@ -19,7 +19,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* no global smooth scroll: it raced the page transition. Anchors scroll smoothly via app/router.options.ts */
   color: var(--ink);
   background: var(--paper);
 }
