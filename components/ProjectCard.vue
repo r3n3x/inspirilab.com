@@ -28,6 +28,9 @@ const l = computed(() => props.line ?? services.find((s) => s.slug === props.pro
           class="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none">{{ project.name }}</a>
         <span v-else>{{ project.name }}</span>
       </h3>
+      <p v-if="project.status" class="mt-3 inline-flex items-center gap-2 rounded-full border-2 border-dashed border-[var(--ink-2)] px-3 py-0.5 text-xs font-semibold text-[var(--ink)]">
+        <span class="w-2 h-2 rounded-full bg-[var(--line-amber)]" aria-hidden="true" />{{ project.status }}
+      </p>
       <p class="mt-3 text-[var(--ink-2)] leading-relaxed">{{ project.description }}</p>
       <p v-if="project.partner" class="mt-3 text-sm text-[var(--ink-2)]">
         In collaboration with

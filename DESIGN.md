@@ -4,7 +4,7 @@ The site is a rail network. Each build service is a coloured line, each real pro
 
 ## Tokens (`assets/css/main.css`)
 - Ground `--paper #ffffff`; ink `--ink #0d1f17` (text, line outlines, station rings, signs); secondary text `--ink-2 #3d5248`; hairlines `--line #dfe6e2`; text on ink `--ink-band-secondary #b7cfc3`.
-- Line colours (non-text use only): `--line-red #e4002b` SaaS & AI, `--line-green #23b573` Websites (also the brand green), `--line-blue #0072bc` Blockchain & DeAI, `--line-amber #f5a800` Consulting. Each service carries its `color` and `short` name in `data/site.ts`.
+- Line colours (non-text use only): `--line-red #e4002b` SaaS & AI, `--line-green #23b573` Websites (also the brand green), `--line-blue #0072bc` Blockchain & DeAI, `--line-amber #f5a800` Consulting, purple `#7b3fa0` Partner Projects & Incubation (set per service in data). Each service carries its `color` and `short` name in `data/site.ts`.
 - Green text on white uses `--brand-deep #13804f`.
 
 ## Type

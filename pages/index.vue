@@ -104,7 +104,7 @@ onBeforeUnmount(() => {
 
         <!-- Stop 2: the lines -->
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
-          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Four lines, one team</h2>
+          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Five lines, one team</h2>
           <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">From strategy to a live product: we design, build and run the software behind each line.</p>
           <div class="mt-10 space-y-3">
             <NuxtLink v-for="s in services" :key="s.slug" :to="`/services#${s.slug}`"

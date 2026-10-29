@@ -6,23 +6,23 @@ interface Station { name: string; href: string; external: boolean; ghost?: boole
 
 const active = ref<string | null>(null)
 
-// Map geometry (viewBox 1200 x 440). Lines leave the interchange and run east.
+// Map geometry (viewBox 1200 x 480). Lines leave the interchange and run east.
 const IX = 300
-const IY = 220
-const ROWS = [70, 170, 270, 370]
+const IY = 235
+const ROWS = [55, 145, 235, 325, 415]
 const FIRST = 640
 const GAP = 170
 
 const lines = computed(() =>
   services.map((s, i) => {
-    const y = ROWS[i] ?? 370
+    const y = ROWS[i] ?? ROWS[ROWS.length - 1]
     let stations: Station[]
     if (s.slug === 'consulting') {
       stations = ['Strategy', 'Idea reviews', 'Keynotes'].map((name) => ({ name, href: '/consulting', external: false }))
     } else {
       stations = projects
-        .filter((p) => p.service === s.slug)
-        .map((p) => ({ name: p.name.replace(' GBP Audit', ''), href: p.url ?? '/work', external: Boolean(p.url) }))
+        .filter((p) => p.service === s.slug || p.also?.includes(s.slug))
+        .map((p) => ({ name: p.name, href: p.url ?? '/work', external: Boolean(p.url) }))
     }
     stations = stations.slice(0, 3)
     stations.push({ name: 'Your project', href: '/contact', external: false, ghost: true })
@@ -48,7 +48,7 @@ function go(st: Station) {
   <div>
     <!-- Desktop / tablet: the full map -->
     <div class="relative hidden md:block">
-      <svg viewBox="0 0 1200 440" class="w-full h-auto" role="group" aria-label="Inspirilab route map: four service lines leaving one consultation interchange">
+      <svg viewBox="0 0 1200 480" class="w-full h-auto" role="group" aria-label="Inspirilab route map: five lines leaving one consultation interchange">
         <line x1="250" :y1="IY" :x2="IX" :y2="IY" stroke="var(--ink)" stroke-width="10" stroke-linecap="round" />
         <g v-for="(l, li) in lines" :key="l.slug" class="transition-opacity duration-200" :opacity="dim(l.slug) ? 0.16 : 1"
           @mouseenter="active = l.slug" @mouseleave="active = null">

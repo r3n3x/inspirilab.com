@@ -85,6 +85,19 @@ export const services: Service[] = [
       'Workshops, training and speaking',
       'Led by our Vice President, Rene Fischer-Bernard'
     ]
+  },
+  {
+    slug: 'partners',
+    short: 'Partners & Incubation',
+    color: '#7b3fa0',
+    icon: 'i-heroicons-users',
+    title: 'Partner Projects & Incubation',
+    summary: 'Ventures we partner with, advise or help incubate, from early idea to running business.',
+    points: [
+      'Advisory for founding teams',
+      'Product and technology support',
+      'Partnerships across Malaysia and Indonesia'
+    ]
   }
 ]
 
@@ -96,6 +109,8 @@ export interface Project {
   logoOnDark?: boolean // light logo: show it on the ink panel
   category: string
   service: string // matches Service.slug
+  also?: string[] // other lines this project appears on in the route map
+  status?: string // e.g. go-live note, shown as a badge on the card
   description: string
   tags: string[]
 }
@@ -104,11 +119,11 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'AuditGBP.my',
-    // TODO: switch to https://auditgbp.my once the domain is live; it does not resolve yet
-    url: 'https://ai.pakciklocation.my',
+    url: 'https://auditgbp.my',
     logo: '/logos/pakciklocation.jpg',
     category: 'SaaS & AI',
     service: 'saas-ai',
+    status: 'Go-live Q4/2026',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
     partner: { name: 'PakCikLocation', url: 'https://pakciklocation.my' },
     tags: ['AI', 'SaaS', 'Cloudflare']
@@ -129,6 +144,7 @@ export const projects: Project[] = [
     logo: '/logos/luxtag.png',
     category: 'Blockchain · Website',
     service: 'blockchain',
+    also: ['web'],
     description: 'Blockchain-based anti-counterfeiting and digital certificate solutions. We rebuilt its website and moved it off WordPress onto Cloudflare.',
     tags: ['Blockchain', 'Migration', 'Cloudflare']
   },
@@ -136,10 +152,29 @@ export const projects: Project[] = [
     name: 'The Jungle Coffee',
     url: 'https://thejunglecoffee.com',
     logo: '/logos/jungle-coffee.jpg',
-    category: 'Website',
-    service: 'web',
-    description: 'Website for a specialty coffee brand sourcing from Indonesia, re-platformed onto Cloudflare to cut hosting costs.',
-    tags: ['Website', 'Migration', 'Cloudflare']
+    category: 'Partner project',
+    service: 'partners',
+    also: ['web'],
+    description: 'Specialty green coffee sourced from Indonesia. A partner venture; we also built and run its website on Cloudflare.',
+    tags: ['Partner', 'Coffee trade', 'Website']
+  },
+  {
+    name: 'ChatterBooth',
+    url: 'https://chatterbooth.app',
+    logo: '/logos/chatterbooth.png',
+    category: 'Partner project',
+    service: 'partners',
+    description: 'An app for anonymous voice and chat conversations, built by a founding team from Bandung, Indonesia. Rene advises the project.',
+    tags: ['Advisory', 'App', 'Wellbeing']
+  },
+  {
+    name: 'Heiko',
+    url: 'https://heiko.my',
+    logo: '/logos/heiko.png',
+    category: 'Partner project',
+    service: 'partners',
+    description: 'ESG consultancy helping Malaysian SMEs with sustainability compliance and measurable impact.',
+    tags: ['Partner', 'ESG', 'Sustainability']
   }
 ]
 
