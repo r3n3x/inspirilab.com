@@ -10,84 +10,121 @@ watch(() => route.path, () => { menuOpen.value = false })
 
 <template>
   <UApp>
-    <div class="min-h-screen bg-white flex flex-col">
+    <div class="min-h-screen bg-[var(--paper)] flex flex-col">
       <!-- Navigation -->
-      <nav class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-md border-b border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="sticky top-0 w-full z-50 bg-[var(--paper)] border-b border-[var(--line)]">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
-            <NuxtLink to="/" class="flex items-center">
-              <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto" />
+            <NuxtLink to="/" class="flex items-center" aria-label="Inspirilab home">
+              <span class="inline-flex items-center justify-center h-9 px-3 rounded-full bg-[var(--ink)]">
+                <img src="/logo.png" alt="Inspirilab" class="h-5 w-auto" />
+              </span>
             </NuxtLink>
-            <div class="hidden md:flex items-center space-x-8 ml-auto">
-              <NuxtLink v-for="item in nav" :key="item.to" :to="item.to"
-                class="text-gray-300 hover:text-[#23b573] transition-colors"
-                exact-active-class="!text-[#23b573]">{{ item.label }}</NuxtLink>
+
+            <div class="hidden md:flex items-center gap-8 ml-auto">
+              <NuxtLink
+                v-for="item in nav"
+                :key="item.to"
+                :to="item.to"
+                class="relative text-sm font-medium text-[var(--ink-2)] hover:text-[var(--ink)] transition-colors"
+                exact-active-class="!text-[var(--ink)] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--brand)]"
+              >
+                {{ item.label }}
+              </NuxtLink>
             </div>
-            <button class="md:hidden text-gray-300 p-2" aria-label="Toggle menu" @click="menuOpen = !menuOpen">
+
+            <div class="hidden md:block">
+              <NuxtLink
+                to="/contact?type=consulting"
+                class="inline-flex items-center justify-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] text-sm font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+              >
+                Book a consultation
+              </NuxtLink>
+            </div>
+
+            <button
+              class="md:hidden text-[var(--ink)] p-2 -mr-2"
+              aria-label="Toggle menu"
+              :aria-expanded="menuOpen ? 'true' : 'false'"
+              @click="menuOpen = !menuOpen"
+            >
               <UIcon :name="menuOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'" class="w-6 h-6" />
             </button>
           </div>
         </div>
-        <div v-if="menuOpen" class="md:hidden border-t border-gray-700 px-4 py-3 space-y-1">
-          <NuxtLink v-for="item in nav" :key="item.to" :to="item.to"
-            class="block py-2 text-gray-300 hover:text-[#23b573]"
-            exact-active-class="!text-[#23b573]">{{ item.label }}</NuxtLink>
+
+        <div v-if="menuOpen" class="md:hidden border-t border-[var(--line)] px-4 py-4 space-y-1">
+          <NuxtLink
+            v-for="item in nav"
+            :key="item.to"
+            :to="item.to"
+            class="block py-2 text-[var(--ink-2)] hover:text-[var(--ink)] transition-colors"
+            exact-active-class="!text-[var(--ink)]"
+          >
+            {{ item.label }}
+          </NuxtLink>
+          <div class="pt-3">
+            <NuxtLink
+              to="/contact?type=consulting"
+              class="inline-flex w-full items-center justify-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] text-sm font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors"
+            >
+              Book a consultation
+            </NuxtLink>
+          </div>
         </div>
       </nav>
 
-      <main class="flex-1 pt-16">
+      <main class="flex-1">
         <NuxtPage />
       </main>
 
       <!-- Footer -->
-      <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-4 gap-12 pb-10 border-b border-gray-800">
+      <footer class="bg-[var(--ink)] text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid md:grid-cols-4 gap-12 pb-10 border-b border-white/10">
             <div>
-              <img src="/logo.png" alt="Inspirilab" class="h-15 w-auto mb-4" />
-              <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
-                Where innovation meets inspiration. Creating solutions that transform ideas into reality.
+              <span class="inline-flex items-center justify-center h-9 px-3 rounded-full bg-white/10 mb-4">
+                <img src="/logo.png" alt="Inspirilab" class="h-5 w-auto" />
+              </span>
+              <p class="text-[#b7cfc3] text-sm leading-relaxed max-w-xs">
+                Technology consulting and product development for blockchain, AI and digital innovation.
               </p>
             </div>
 
             <div>
-              <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-4">Company</p>
+              <p class="text-xs font-medium tracking-widest text-[#b7cfc3] uppercase mb-4">Company</p>
               <ul class="space-y-3">
                 <li v-for="item in nav" :key="item.to">
-                  <NuxtLink :to="item.to" class="text-gray-400 text-sm hover:text-[#23b573] transition-colors">{{ item.label }}</NuxtLink>
+                  <NuxtLink :to="item.to" class="text-[#b7cfc3] text-sm hover:text-white transition-colors">{{ item.label }}</NuxtLink>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-4">Services</p>
+              <p class="text-xs font-medium tracking-widest text-[#b7cfc3] uppercase mb-4">Services</p>
               <ul class="space-y-3">
                 <li v-for="s in services" :key="s.slug">
-                  <NuxtLink :to="`/services#${s.slug}`" class="text-gray-400 text-sm hover:text-[#23b573] transition-colors">{{ s.title }}</NuxtLink>
+                  <NuxtLink :to="`/services#${s.slug}`" class="text-[#b7cfc3] text-sm hover:text-white transition-colors">{{ s.title }}</NuxtLink>
                 </li>
               </ul>
             </div>
 
             <div>
-              <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-4">Contact</p>
-              <address class="text-gray-400 text-sm not-italic leading-relaxed mb-5">
+              <p class="text-xs font-medium tracking-widest text-[#b7cfc3] uppercase mb-4">Contact</p>
+              <address class="text-[#b7cfc3] text-sm not-italic leading-relaxed mb-5">
                 <template v-for="line in address" :key="line">{{ line }}<br /></template>
               </address>
-              <a v-if="links.email" :href="`mailto:${links.email}`"
-                class="block text-gray-400 text-sm hover:text-[#23b573] mb-4">{{ links.email }}</a>
-              <div class="flex items-center gap-3">
-                <a :href="links.companyLinkedIn" target="_blank" rel="noopener noreferrer"
-                  class="w-8 h-8 rounded-md bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 transition-colors"
-                  aria-label="LinkedIn">
-                  <img src="/linkedin-logo.svg" alt="LinkedIn" class="h-4 w-4" />
-                </a>
-                <span class="text-gray-400 text-sm">Connect with us</span>
-              </div>
+              <a v-if="links.email" :href="`mailto:${links.email}`" class="block text-[#b7cfc3] text-sm hover:text-white mb-4">
+                {{ links.email }}
+              </a>
+              <a :href="links.companyLinkedIn" target="_blank" rel="noopener noreferrer" class="text-[#b7cfc3] text-sm hover:text-white transition-colors">
+                LinkedIn
+              </a>
             </div>
           </div>
 
-          <div class="pt-8 text-center">
-            <p class="text-gray-500 text-s">&copy; {{ currentYear }} Inspirilab. All rights reserved.</p>
+          <div class="pt-8">
+            <p class="text-[#b7cfc3] text-sm">&copy; {{ currentYear }} Inspirilab Sdn. Bhd.</p>
           </div>
         </div>
       </footer>

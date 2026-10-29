@@ -23,81 +23,141 @@ function submit() {
 
 <template>
   <div>
-    <PageHeader title="Get in" highlight="Touch"
-      subtitle="Tell us about your project, or book a consultation. We usually reply within a few working days." />
+    <PageHeader
+      title="Get in"
+      highlight="touch"
+      subtitle="Book a consultation with Rene, or tell us about a product you want built."
+    />
 
-    <section class="py-20">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-5 gap-12">
-        <!-- Form -->
-        <div class="md:col-span-3">
-          <form v-if="links.email" class="space-y-5" @submit.prevent="submit">
+    <section class="py-20 md:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <!-- Left: form or LinkedIn fallback -->
+        <div class="lg:col-span-7">
+          <form v-if="links.email" class="space-y-6" @submit.prevent="submit">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1" for="type">What is this about?</label>
-              <select id="type" v-model="form.type"
-                class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-[#23b573] focus:outline-none">
+              <label for="type" class="block text-sm font-medium text-[var(--ink)] mb-2">What is this about?</label>
+              <select
+                id="type"
+                v-model="form.type"
+                class="w-full rounded-[10px] border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-[var(--ink)] focus:border-[var(--brand-deep)] focus:outline-none transition-colors"
+              >
                 <option v-for="t in types" :key="t">{{ t }}</option>
               </select>
             </div>
-            <div class="grid sm:grid-cols-2 gap-5">
+
+            <div class="grid sm:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Name</label>
-                <input id="name" v-model="form.name" required
-                  class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-[#23b573] focus:outline-none" />
+                <label for="name" class="block text-sm font-medium text-[var(--ink)] mb-2">Name</label>
+                <input
+                  id="name"
+                  v-model="form.name"
+                  required
+                  class="w-full rounded-[10px] border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-[var(--ink)] focus:border-[var(--brand-deep)] focus:outline-none transition-colors"
+                />
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1" for="company">Company (optional)</label>
-                <input id="company" v-model="form.company"
-                  class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-[#23b573] focus:outline-none" />
+                <label for="company" class="block text-sm font-medium text-[var(--ink)] mb-2">Company (optional)</label>
+                <input
+                  id="company"
+                  v-model="form.company"
+                  class="w-full rounded-[10px] border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-[var(--ink)] focus:border-[var(--brand-deep)] focus:outline-none transition-colors"
+                />
               </div>
             </div>
+
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1" for="message">Message</label>
-              <textarea id="message" v-model="form.message" required rows="6"
-                class="w-full rounded-lg border border-gray-300 px-3 py-2 focus:border-[#23b573] focus:outline-none"></textarea>
+              <label for="message" class="block text-sm font-medium text-[var(--ink)] mb-2">Message</label>
+              <textarea
+                id="message"
+                v-model="form.message"
+                required
+                rows="6"
+                class="w-full rounded-[10px] border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-[var(--ink)] focus:border-[var(--brand-deep)] focus:outline-none transition-colors resize-y"
+              ></textarea>
             </div>
-            <button type="submit"
-              class="inline-flex items-center px-6 py-3 rounded-lg bg-[#23b573] text-white font-medium hover:bg-[#1ea065] transition-colors">
-              Send enquiry <UIcon name="i-heroicons-paper-airplane" class="w-5 h-5 ml-2" />
+
+            <button
+              type="submit"
+              class="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--brand)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:bg-[var(--brand-deep)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+            >
+              Send enquiry
+              <UIcon name="i-heroicons-paper-airplane" class="w-5 h-5" />
             </button>
           </form>
 
-          <div v-else class="space-y-6">
-            <h2 class="text-2xl font-bold text-gray-900">Reach us on LinkedIn</h2>
-            <p class="text-gray-600">Send us a message on LinkedIn and we will get back to you.</p>
+          <div v-else class="rounded-[14px] border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10">
+            <h2 class="text-2xl font-semibold tracking-[-0.03em] text-[var(--ink)] mb-4">Message us on LinkedIn</h2>
+            <p class="text-[var(--ink-2)] mb-8">Send us a message on LinkedIn and we will get back to you.</p>
             <div class="flex flex-col sm:flex-row gap-4">
-              <a :href="links.companyLinkedIn" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-[#23b573] text-white font-medium hover:bg-[#1ea065] transition-colors">
-                Message Inspirilab
+              <a
+                :href="links.reneLinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--brand)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:bg-[var(--brand-deep)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+              >
+                Book a consultation with Rene
+                <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />
               </a>
-              <a :href="links.reneLinkedIn" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 text-gray-800 font-medium hover:border-[#23b573] hover:text-[#23b573] transition-colors">
-                Consulting: message Rene
+              <a
+                :href="links.companyLinkedIn"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-[10px] border border-[var(--line)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:border-[var(--ink)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+              >
+                Message Inspirilab
+                <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Details -->
-        <div class="md:col-span-2 space-y-8">
-          <div>
-            <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-3">Office</p>
-            <address class="text-gray-700 not-italic leading-relaxed">
-              <template v-for="line in address" :key="line">{{ line }}<br /></template>
-            </address>
-          </div>
-          <div v-if="links.email">
-            <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-3">Email</p>
-            <a :href="`mailto:${links.email}`" class="text-[#23b573] hover:text-[#1ea065]">{{ links.email }}</a>
-          </div>
-          <div>
-            <p class="text-xs font-medium tracking-widest text-gray-500 uppercase mb-3">Social</p>
-            <ul class="space-y-2">
-              <li><a :href="links.companyLinkedIn" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-[#23b573]">Inspirilab on LinkedIn</a></li>
-              <li><a :href="links.reneLinkedIn" target="_blank" rel="noopener noreferrer" class="text-gray-700 hover:text-[#23b573]">Rene Fischer-Bernard on LinkedIn</a></li>
-            </ul>
+        <!-- Right: details panel -->
+        <div class="lg:col-span-5">
+          <div class="rounded-[14px] bg-[var(--mist)] p-8 md:p-10 space-y-8">
+            <div>
+              <h3 class="text-sm font-medium text-[var(--ink-2)] mb-3">Office</h3>
+              <address class="not-italic leading-relaxed text-[var(--ink)]">
+                <template v-for="line in address" :key="line">{{ line }}<br /></template>
+              </address>
+            </div>
+
+            <div v-if="links.email">
+              <h3 class="text-sm font-medium text-[var(--ink-2)] mb-3">Email</h3>
+              <a :href="`mailto:${links.email}`" class="text-[var(--brand-deep)] hover:underline">{{ links.email }}</a>
+            </div>
+
+            <div>
+              <h3 class="text-sm font-medium text-[var(--ink-2)] mb-3">LinkedIn</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    :href="links.companyLinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-[var(--brand-deep)] hover:underline"
+                  >
+                    Inspirilab
+                    <UIcon name="i-heroicons-arrow-up-right" class="w-3.5 h-3.5" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    :href="links.reneLinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-[var(--brand-deep)] hover:underline"
+                  >
+                    Rene Fischer-Bernard
+                    <UIcon name="i-heroicons-arrow-up-right" class="w-3.5 h-3.5" />
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
+    <CtaBanner />
   </div>
 </template>

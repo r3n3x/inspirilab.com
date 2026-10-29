@@ -1,22 +1,30 @@
 <script setup lang="ts">
 withDefaults(defineProps<{ title?: string; text?: string; to?: string; label?: string }>(), {
-  title: 'Have a project in mind?',
-  text: 'Tell us what you need and we will get back to you with how we can help.',
-  to: '/contact',
-  label: 'Get in touch'
+  title: 'Talk to Rene about your next step',
+  text: 'Book a consultation on blockchain, AI or digital innovation, or tell us about a product you want built.',
+  to: '/contact?type=consulting',
+  label: 'Book a consultation'
 })
 </script>
 
 <template>
-  <section class="py-20 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">{{ title }}</h2>
-      <p class="text-gray-400 text-lg mb-8">{{ text }}</p>
-      <NuxtLink :to="to"
-        class="inline-flex items-center px-6 py-3 rounded-lg bg-[#23b573] text-white font-medium hover:bg-[#1ea065] transition-colors">
-        {{ label }}
-        <UIcon name="i-heroicons-arrow-right" class="w-5 h-5 ml-2" />
-      </NuxtLink>
+  <section class="bg-[var(--ink)] text-white">
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28">
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+        <div>
+          <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-wrap-balance mb-4">{{ title }}</h2>
+          <p class="text-[#b7cfc3] text-lg leading-relaxed max-w-prose">{{ text }}</p>
+        </div>
+        <div class="mt-8 md:mt-0 md:justify-self-end">
+          <NuxtLink
+            :to="to"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] font-medium transition-colors duration-150 hover:bg-[var(--brand-deep)] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--brand)]"
+          >
+            {{ label }}
+            <UIcon name="i-heroicons-arrow-right" class="w-5 h-5" />
+          </NuxtLink>
+        </div>
+      </div>
     </div>
   </section>
 </template>

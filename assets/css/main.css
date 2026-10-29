@@ -1,56 +1,123 @@
+@import "@fontsource-variable/schibsted-grotesk";
+@import "@fontsource-variable/geist";
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* Custom styles for Inspirilab */
-@keyframes fade-in {
+:root {
+  --paper: #ffffff;
+  --mist: #f4f7f5;
+  --ink: #0d1f17;
+  --ink-2: #3d5248;
+  --line: #dfe6e2;
+  --brand: #23b573;
+  --brand-deep: #13804f;
+  --ink-band-secondary: #b7cfc3;
+}
+
+html {
+  scroll-behavior: smooth;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+body {
+  font-family: 'Geist Variable', system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3 {
+  font-family: 'Schibsted Grotesk Variable', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  line-height: 1.02;
+}
+
+h2 {
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+* {
+  caret-color: var(--brand-deep);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5d3cb;
+  border-radius: 4px;
+}
+
+.tabular-nums,
+.year,
+.date {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 1s ease-out;
+.rise {
+  animation: rise 600ms cubic-bezier(.16, 1, .3, 1) both;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.rise-2 {
+  animation: rise 600ms cubic-bezier(.16, 1, .3, 1) 120ms both;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #23b573;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1ea065;
-}
-
-/* Ensure proper loading of Tailwind utilities */
-@layer utilities {
-  .text-brand {
-    color: #23b573;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-
-  .bg-brand {
-    background-color: #23b573;
+  .rise,
+  .rise-2 {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
-
-  .border-brand {
-    border-color: #23b573;
-  }
-}
-/* Keep anchor targets clear of the fixed nav */
-[id] {
-  scroll-margin-top: 5rem;
 }
