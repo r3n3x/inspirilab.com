@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { rene, links, offerings, topics, talks } from '~/data/site'
+import { rene, links, offerings, topics, talks, clarity } from '~/data/site'
 
 useHead({ title: 'Consulting | Inspirilab' })
 </script>
@@ -59,6 +59,24 @@ useHead({ title: 'Consulting | Inspirilab' })
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Approach: fear into opportunity -->
+    <section class="py-20 md:py-28 border-t border-[var(--line)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] font-bold tracking-[-0.03em] text-[var(--ink)]">{{ clarity.title }}</h2>
+        <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">{{ clarity.intro }}</p>
+        <ol v-reveal class="relative mt-12 grid gap-8 md:grid-cols-4 md:gap-6">
+          <span class="absolute left-[11px] top-3 bottom-3 w-2 rounded-full md:left-3 md:right-3 md:top-[11px] md:bottom-auto md:h-2 md:w-auto" style="background:#f5a800" aria-hidden="true" />
+          <li v-for="(st, i) in clarity.steps" :key="st.title" class="relative pl-12 md:pl-0 md:pt-14">
+            <span class="absolute left-0 top-0 w-[30px] h-[30px] rounded-full bg-[var(--paper)] border-[7px] border-[var(--ink)]" aria-hidden="true" />
+            <p class="text-sm font-medium text-[var(--ink-2)]">Step {{ i + 1 }}</p>
+            <h3 class="mt-1 text-xl font-bold text-[var(--ink)]">{{ st.title }}</h3>
+            <p class="mt-2 text-[var(--ink-2)] leading-relaxed">{{ st.text }}</p>
+          </li>
+        </ol>
+        <NuxtLink to="/contact?type=consulting" class="btn-primary mt-12">Book a free first consultation</NuxtLink>
       </div>
     </section>
 

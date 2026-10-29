@@ -235,3 +235,15 @@ export const team = [
   { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
   { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
 ]
+
+// Rene's consulting approach: "Convert fear into opportunity". Draft wording, confirm with Rene.
+export const clarity = {
+  title: 'Turn fear into opportunity',
+  intro: 'New technology usually triggers one of two fears: missing out, or being made redundant. We bring you clarity from our insights into the latest developments in business and technology, so you can act on facts instead of fear.',
+  steps: [
+    { title: 'Name the fear', text: 'Is it Fear of Missing Out ("everyone is doing AI") or Fear of Change ("our processes will become redundant")?' },
+    { title: 'Find the real problem', text: 'Set the technology aside and find what is actually costing you time, money or customers.' },
+    { title: 'Weigh both risks', text: 'Compare the cost of moving now with the cost of waiting another year.' },
+    { title: 'Take the first safe step', text: 'A small pilot that proves value without breaking what already works.' }
+  ]
+}
