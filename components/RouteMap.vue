@@ -140,7 +140,7 @@ function go(st: Station) {
 }
 .map-station:hover circle, .map-station:focus-visible circle { r: 16; }
 .map-station:focus-visible text { text-decoration: underline; }
-.free-arrow { animation: nudge 1.8s var(--ease-out, ease-out) infinite; transform-origin: 50% 100%; }
-@keyframes nudge { 0%, 60%, 100% { transform: translate3d(0,0,0) } 30% { transform: translate3d(-2px,-5px,0) } }
-@media (prefers-reduced-motion: reduce) { .free-arrow { animation: none } }
+.free-note { opacity: 0; animation: note-in .5s var(--ease-out, ease-out) 2.2s forwards; }
+@keyframes note-in { from { opacity: 0; transform: translate3d(0,8px,0) } to { opacity: 1; transform: none } }
+@media (prefers-reduced-motion: reduce) { .free-note { opacity: 1; animation: none } }
 </style>
