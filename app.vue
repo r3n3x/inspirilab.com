@@ -16,12 +16,12 @@ watch(() => route.path, () => { menuOpen.value = false })
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between items-center h-16">
             <NuxtLink to="/" class="flex items-center" aria-label="Inspirilab home">
-              <span class="inline-flex items-center justify-center h-9 px-3 rounded-full bg-[var(--ink)]">
-                <img src="/logo.png" alt="Inspirilab" class="h-5 w-auto" />
+              <span class="inline-flex items-center justify-center h-11 px-3 rounded-[10px] bg-[var(--ink)]">
+                <img src="/logo.png" alt="Inspirilab" class="h-9 w-auto" />
               </span>
             </NuxtLink>
 
-            <div class="hidden md:flex items-center gap-8 ml-auto">
+            <div class="hidden md:flex items-center gap-7 ml-auto mr-8">
               <NuxtLink
                 v-for="item in nav"
                 :key="item.to"
@@ -84,7 +84,7 @@ watch(() => route.path, () => { menuOpen.value = false })
           <div class="grid md:grid-cols-4 gap-12 pb-10 border-b border-white/10">
             <div>
               <span class="inline-flex items-center justify-center h-9 px-3 rounded-full bg-white/10 mb-4">
-                <img src="/logo.png" alt="Inspirilab" class="h-5 w-auto" />
+                <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto -ml-1" />
               </span>
               <p class="text-[#b7cfc3] text-sm leading-relaxed max-w-xs">
                 Technology consulting and product development for blockchain, AI and digital innovation.

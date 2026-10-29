@@ -88,7 +88,7 @@ function submit() {
           <div v-else class="rounded-[14px] border border-[var(--line)] bg-[var(--paper)] p-8 md:p-10">
             <h2 class="text-2xl font-semibold tracking-[-0.03em] text-[var(--ink)] mb-4">Message us on LinkedIn</h2>
             <p class="text-[var(--ink-2)] mb-8">Send us a message on LinkedIn and we will get back to you.</p>
-            <div class="flex flex-col sm:flex-row gap-4">
+            <div class="flex flex-col items-start gap-3">
               <a
                 :href="links.reneLinkedIn"
                 target="_blank"

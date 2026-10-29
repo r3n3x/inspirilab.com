@@ -102,7 +102,7 @@ useHead({ title: 'Inspirilab | Technology consulting & product development' })
             v-for="(s, i) in services"
             :key="s.slug"
             :to="`/services#${s.slug}`"
-            class="group flex items-center justify-between gap-6 py-8 border-b border-[var(--line)] first:border-t"
+            class="group flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6 py-6 md:py-8 border-b border-[var(--line)] first:border-t"
           >
             <div class="md:w-1/2">
               <h3 class="text-[1.5rem] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-deep)] transition-colors duration-150">

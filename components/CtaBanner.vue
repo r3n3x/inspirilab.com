@@ -9,7 +9,7 @@ withDefaults(defineProps<{ title?: string; text?: string; to?: string; label?: s
 
 <template>
   <section class="bg-[var(--ink)] text-white">
-    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
         <div>
           <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] font-semibold tracking-[-0.03em] text-wrap-balance mb-4">{{ title }}</h2>
