@@ -6,7 +6,7 @@ useHead({ title: 'Consulting | Inspirilab' })
 
 <template>
   <div>
-    <PageHeader title="Consulting with" highlight="Mr. Rene" :subtitle="rene.headline" />
+    <PageHeader title="Technology" highlight="consulting" subtitle="Clarity on blockchain, AI and digital innovation, from a team that also builds it." />
 
     <!-- Bio -->
     <section class="py-20 md:py-28">
@@ -18,6 +18,7 @@ useHead({ title: 'Consulting | Inspirilab' })
             <div class="w-20 h-20 rounded-full bg-[var(--ink)] flex items-center justify-center mb-5">
               <span class="text-2xl font-semibold text-white">RF</span>
             </div>
+            <p class="text-sm font-medium text-[var(--ink-2)] mb-1">Led by</p>
             <h2 class="text-xl font-semibold text-[var(--ink)] mb-1">{{ rene.name }}</h2>
             <p class="text-sm text-[var(--ink-2)] mb-6">{{ rene.role }}</p>
             <ul class="space-y-3 mb-6">
@@ -45,7 +46,7 @@ useHead({ title: 'Consulting | Inspirilab' })
           </div>
 
           <h2 class="text-[1.9rem] md:text-[2.5rem] font-semibold tracking-[-0.03em] text-[var(--ink)] mt-14 mb-6 text-wrap-balance">
-            What he advises on
+            What we advise on
           </h2>
           <div class="divide-y divide-[var(--line)]">
             <div v-for="o in offerings" :key="o.title" class="py-5 flex items-start gap-4">

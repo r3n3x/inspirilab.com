@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
             Every line starts with one conversation.
           </h1>
           <p class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">
-            Technology consulting from Rene and the Inspirilab team in Cyberjaya, who then build what you decide:
+            Technology consulting from the Inspirilab team in Cyberjaya, led by Rene Fischer-Bernard. Then we build what you decide:
             SaaS and AI products, websites, blockchain and decentralised AI.
           </p>
         </div>
@@ -67,8 +67,8 @@ onBeforeUnmount(() => {
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
           <div class="grid lg:grid-cols-12 gap-10">
             <div class="lg:col-span-5">
-              <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The interchange: Rene</h2>
-              <p class="mt-5 text-lg text-[var(--ink-2)]">{{ rene.bio[0] }}</p>
+              <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The interchange: consulting</h2>
+              <p class="mt-5 text-lg text-[var(--ink-2)]"><strong class="text-[var(--ink)]">Led by Rene Fischer-Bernard.</strong> {{ rene.bio[0] }}</p>
               <ul class="mt-6 space-y-2.5">
                 <li v-for="c in rene.credentials" :key="c" class="flex items-start gap-3">
                   <span class="mt-1.5 w-3 h-3 shrink-0 rounded-full border-[3px] border-[var(--ink)]" aria-hidden="true" />
@@ -77,11 +77,11 @@ onBeforeUnmount(() => {
               </ul>
               <div class="mt-8 flex flex-wrap gap-3">
                 <NuxtLink to="/contact?type=consulting" class="btn-primary">Book a free first consultation</NuxtLink>
-                <NuxtLink to="/consulting" class="btn-secondary">About Rene</NuxtLink>
+                <NuxtLink to="/consulting" class="btn-secondary">About our consulting</NuxtLink>
               </div>
             </div>
             <div class="lg:col-span-7">
-              <h3 class="text-base font-semibold text-[var(--ink-2)] mb-2">What he advises on</h3>
+              <h3 class="text-base font-semibold text-[var(--ink-2)] mb-2">What we advise on</h3>
               <ul v-reveal class="divide-y divide-[var(--line)] border-y border-[var(--line)]">
                 <li v-for="o in offerings" :key="o.title" class="flex gap-4 py-4">
                   <UIcon :name="o.icon" class="w-5 h-5 mt-0.5 shrink-0 text-[var(--ink)]" aria-hidden="true" />
