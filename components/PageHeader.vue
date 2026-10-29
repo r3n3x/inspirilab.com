@@ -1,14 +1,16 @@
 <script setup lang="ts">
-defineProps<{ title: string; highlight?: string; subtitle?: string }>()
+defineProps<{ title: string; highlight?: string; subtitle?: string; color?: string }>()
 </script>
 
 <template>
-  <section class="bg-[var(--mist)] pt-16 pb-14 md:pt-24 md:pb-20">
+  <section class="pt-10 md:pt-14 pb-10 md:pb-14">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.03em] font-semibold text-[var(--ink)] text-balance mb-6">
-        {{ title }}{{ highlight ? ' ' : '' }}<span v-if="highlight" class="text-[var(--brand-deep)]">{{ highlight }}</span>
-      </h1>
-      <p v-if="subtitle" class="text-lg text-[var(--ink-2)] max-w-2xl leading-relaxed">{{ subtitle }}</p>
+      <div class="station-sign max-w-4xl">
+        <h1 class="text-[clamp(2.2rem,5vw,3.8rem)] leading-[1.03] font-bold text-white">
+          {{ title }}{{ highlight ? ' ' : '' }}<span v-if="highlight" :style="{ color: color ?? 'var(--brand)' }">{{ highlight }}</span>
+        </h1>
+        <p v-if="subtitle" class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">{{ subtitle }}</p>
+      </div>
     </div>
   </section>
 </template>

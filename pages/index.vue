@@ -2,174 +2,116 @@
 import { services, projects, partners, rene, offerings } from '~/data/site'
 
 useHead({ title: 'Inspirilab | Technology consulting & product development' })
+
+const lineOf = (slug: string) => services.find((s) => s.slug === slug)
 </script>
 
 <template>
   <div>
-    <!-- Hero -->
-    <section class="bg-[var(--paper)] pt-16 md:pt-24 pb-20">
+    <!-- First viewport: station sign + the network -->
+    <section class="pt-10 md:pt-14 pb-14">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-          <div class="lg:col-span-7">
-            <h1 class="rise text-[clamp(2.5rem,6vw,4.75rem)] leading-[1.02] tracking-[-0.03em] font-bold text-[var(--ink)] text-balance mb-6">
-              Technology consulting that turns into shipped products.
-            </h1>
-            <p class="text-[1.0625rem] leading-[1.65] text-[var(--ink-2)] max-w-xl mb-8">
-              {{ rene.headline }} Led by Rene Fischer-Bernard, backed by a team that builds SaaS, AI, websites and blockchain solutions.
-            </p>
-            <div class="rise-2 flex flex-col sm:flex-row gap-4">
-              <NuxtLink
-                to="/contact?type=consulting"
-                class="inline-flex items-center justify-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors duration-150"
-              >
-                Book a consultation
-              </NuxtLink>
-              <NuxtLink
-                to="/services"
-                class="inline-flex items-center justify-center px-5 py-3 rounded-[10px] border border-[var(--line)] text-[var(--ink)] font-medium hover:border-[var(--ink)] transition-colors duration-150"
-              >
-                Explore our services
-              </NuxtLink>
-            </div>
-          </div>
-          <div class="lg:col-span-5">
-            <div class="bg-[var(--mist)] rounded-[14px] p-6 md:p-8">
-              <h2 class="text-[1.25rem] font-semibold text-[var(--ink)] mb-1">{{ rene.name }}</h2>
-              <p class="text-[0.875rem] text-[var(--ink-2)] mb-6">{{ rene.role }}</p>
-              <ul class="space-y-3 mb-6">
+        <div class="station-sign rise max-w-3xl">
+          <h1 class="text-[clamp(2.2rem,5vw,4rem)] leading-[1.03] font-bold text-white">
+            Every line starts with one conversation.
+          </h1>
+          <p class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">
+            Technology consulting with Rene Fischer-Bernard, and a team in Cyberjaya that builds what you decide:
+            SaaS and AI products, websites, blockchain and decentralised AI.
+          </p>
+        </div>
+
+        <div class="mt-10 md:mt-6">
+          <RouteMap />
+        </div>
+        <div class="mt-6 md:mt-4 md:text-right">
+          <NuxtLink to="/services" class="inline-flex items-center gap-1.5 font-medium text-[var(--brand-deep)] hover:underline">
+            Explore all service lines <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" aria-hidden="true" />
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- The route continues: every section is a stop -->
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="spine pb-6">
+        <!-- Stop 1: the interchange -->
+        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+          <div class="grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-5">
+              <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The interchange: Rene</h2>
+              <p class="mt-5 text-lg text-[var(--ink-2)]">{{ rene.bio[0] }}</p>
+              <ul class="mt-6 space-y-2.5">
                 <li v-for="c in rene.credentials" :key="c" class="flex items-start gap-3">
-                  <UIcon name="i-heroicons-check" aria-hidden="true" class="w-5 h-5 text-[var(--brand-deep)] shrink-0 mt-0.5" />
-                  <span class="text-[0.9375rem] text-[var(--ink)]">{{ c }}</span>
+                  <span class="mt-1.5 w-3 h-3 shrink-0 rounded-full border-[3px] border-[var(--ink)]" aria-hidden="true" />
+                  <span>{{ c }}</span>
                 </li>
               </ul>
-              <NuxtLink
-                to="/consulting"
-                class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
-              >
-                About Rene
-                <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
-              </NuxtLink>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <NuxtLink to="/contact?type=consulting" class="btn-primary">Book a consultation</NuxtLink>
+                <NuxtLink to="/consulting" class="btn-secondary">About Rene</NuxtLink>
+              </div>
+            </div>
+            <div class="lg:col-span-7">
+              <h3 class="text-base font-semibold text-[var(--ink-2)] mb-2">What he advises on</h3>
+              <ul class="divide-y divide-[var(--line)] border-y border-[var(--line)]">
+                <li v-for="o in offerings" :key="o.title" class="flex gap-4 py-4">
+                  <UIcon :name="o.icon" class="w-5 h-5 mt-0.5 shrink-0 text-[var(--ink)]" aria-hidden="true" />
+                  <div>
+                    <p class="font-semibold">{{ o.title }}</p>
+                    <p class="text-[0.95rem] text-[var(--ink-2)]">{{ o.text }}</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- How Rene can help -->
-    <section class="bg-[var(--mist)] py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.03em] font-bold text-[var(--ink)] text-balance mb-6">
-          How Rene can help
-        </h2>
-        <div class="grid md:grid-cols-2 gap-x-12">
-          <div
-            v-for="(o, i) in offerings"
-            :key="o.title"
-            class="flex items-start gap-4 py-6 border-b border-[var(--line)]"
-          >
-            <div class="w-10 h-10 bg-[var(--paper)] rounded-[10px] flex items-center justify-center shrink-0">
-              <UIcon :name="o.icon" aria-hidden="true" class="w-5 h-5 text-[var(--brand-deep)]" />
-            </div>
-            <div>
-              <h3 class="text-[1.25rem] font-semibold text-[var(--ink)] mb-1">{{ o.title }}</h3>
-              <p class="text-[0.9375rem] leading-[1.6] text-[var(--ink-2)]">{{ o.text }}</p>
-            </div>
+        <!-- Stop 2: the lines -->
+        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Four lines, one team</h2>
+          <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">From strategy to a live product: we design, build and run the software behind each line.</p>
+          <div class="mt-10 space-y-3">
+            <NuxtLink v-for="s in services" :key="s.slug" :to="`/services#${s.slug}`"
+              class="group grid md:grid-cols-12 gap-3 md:gap-6 items-center rounded-xl border-2 border-transparent hover:border-[var(--ink)] p-4 md:p-5 transition-colors">
+              <span class="md:col-span-1 h-3.5 w-14 rounded-full" :style="{ background: s.color }" aria-hidden="true" />
+              <span class="md:col-span-4 text-xl font-bold">{{ s.title }}</span>
+              <span class="md:col-span-6 text-[var(--ink-2)]">{{ s.summary }}</span>
+              <UIcon name="i-heroicons-arrow-right" class="hidden md:block md:col-span-1 justify-self-end w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </NuxtLink>
           </div>
-        </div>
-        <div class="mt-8">
-          <NuxtLink
-            to="/consulting"
-            class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
-          >
-            See consulting in detail
-            <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- We also build it -->
-    <section class="bg-[var(--paper)] py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.03em] font-bold text-[var(--ink)] text-balance mb-3">
-          We also build it
-        </h2>
-        <p class="text-[1.0625rem] text-[var(--ink-2)] mb-10 max-w-2xl">
-          From strategy to a live product, our team designs, builds and runs the software behind these services.
-        </p>
-        <div>
-          <NuxtLink
-            v-for="(s, i) in services"
-            :key="s.slug"
-            :to="`/services#${s.slug}`"
-            class="group flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-6 py-6 md:py-8 border-b border-[var(--line)] first:border-t"
-          >
-            <div class="md:w-1/2">
-              <h3 class="text-[1.5rem] font-semibold text-[var(--ink)] group-hover:text-[var(--brand-deep)] transition-colors duration-150">
-                {{ s.title }}
-              </h3>
-            </div>
-            <div class="flex items-center gap-4 md:w-1/2">
-              <p class="text-[0.9375rem] leading-[1.6] text-[var(--ink-2)] flex-1">{{ s.summary }}</p>
-              <UIcon
-                name="i-heroicons-arrow-right"
-                aria-hidden="true"
-                class="w-5 h-5 text-[var(--ink-2)] group-hover:text-[var(--brand-deep)] group-hover:translate-x-1 transition-all duration-150 shrink-0"
-              />
-            </div>
-          </NuxtLink>
-        </div>
-      </div>
-    </section>
-
-    <!-- Selected work -->
-    <section class="bg-[var(--mist)] py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-end justify-between mb-10 gap-4">
-          <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] tracking-[-0.03em] font-bold text-[var(--ink)] text-balance">
-            Selected work
-          </h2>
-          <NuxtLink
-            to="/work"
-            class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150 shrink-0"
-          >
-            All projects
-            <UIcon name="i-heroicons-arrow-right" aria-hidden="true" class="w-4 h-4 ml-1" />
-          </NuxtLink>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <ProjectCard v-for="p in projects.slice(0, 4)" :key="p.name" :project="p" />
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="bg-[var(--paper)] py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-[1.25rem] font-semibold text-[var(--ink)] mb-8">Open-source partners</h2>
-        <div class="grid md:grid-cols-2 gap-x-12">
-          <div
-            v-for="p in partners"
-            :key="p.name"
-            class="py-6 border-b border-[var(--line)]"
-          >
-            <div class="flex items-center justify-between gap-4 mb-2">
-              <h3 class="text-[1.125rem] font-semibold text-[var(--ink)]">{{ p.name }}</h3>
-              <a
-                :href="p.url"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center text-[var(--brand-deep)] hover:text-[var(--ink)] font-medium transition-colors duration-150"
-              >
-                Visit
-                <UIcon name="i-heroicons-arrow-top-right-on-square" aria-hidden="true" class="w-4 h-4 ml-1" />
-              </a>
-            </div>
-            <p class="text-[0.9375rem] leading-[1.6] text-[var(--ink-2)]">{{ p.description }}</p>
+        <!-- Stop 3: stations -->
+        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Stations we've built</h2>
+            <NuxtLink to="/work" class="inline-flex items-center gap-1.5 font-medium text-[var(--brand-deep)] hover:underline">
+              All projects <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" aria-hidden="true" />
+            </NuxtLink>
           </div>
-        </div>
+          <div class="mt-10 grid md:grid-cols-2 gap-5">
+            <ProjectCard v-for="p in projects" :key="p.name" :project="p" :line="lineOf(p.service)" />
+          </div>
+        </section>
+
+        <!-- Stop 4: connecting lines -->
+        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+          <h2 class="stop text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.1] font-bold">Connecting lines</h2>
+          <p class="mt-3 text-[var(--ink-2)]">Our flagship open-source partners.</p>
+          <div class="mt-8 grid md:grid-cols-2 gap-x-10">
+            <a v-for="p in partners" :key="p.name" :href="p.url" target="_blank" rel="noopener noreferrer"
+              class="group flex items-start justify-between gap-4 py-4 border-t border-[var(--line)]">
+              <span>
+                <span class="block font-semibold group-hover:text-[var(--brand-deep)]">{{ p.name }}</span>
+                <span class="block text-[0.95rem] text-[var(--ink-2)]">{{ p.description }}</span>
+              </span>
+              <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4 mt-1 shrink-0" aria-hidden="true" />
+            </a>
+          </div>
+        </section>
       </div>
-    </section>
+    </div>
 
     <CtaBanner />
   </div>

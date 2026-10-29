@@ -21,6 +21,8 @@ export const address = ['Level 3, Wisma Suria', 'Jalan Teknokrat 6', 'Cyberjaya 
 
 export interface Service {
   slug: string
+  color: string // rail line colour
+  short: string // line name on the route map
   icon: string
   title: string
   summary: string
@@ -30,6 +32,8 @@ export interface Service {
 export const services: Service[] = [
   {
     slug: 'saas-ai',
+    short: 'SaaS & AI',
+    color: '#e4002b',
     icon: 'i-heroicons-cpu-chip',
     title: 'SaaS & AI Products',
     summary: 'We design, build and run software products end to end, from the first prototype to a live, paying product.',
@@ -42,6 +46,8 @@ export const services: Service[] = [
   },
   {
     slug: 'web',
+    short: 'Websites',
+    color: '#23b573',
     icon: 'i-heroicons-globe-alt',
     title: 'Websites & Migrations',
     summary: 'Fast, modern websites, and migrations off costly or outdated platforms onto lean, low-maintenance hosting.',
@@ -54,6 +60,8 @@ export const services: Service[] = [
   },
   {
     slug: 'blockchain',
+    short: 'Blockchain & DeAI',
+    color: '#0072bc',
     icon: 'i-heroicons-cube',
     title: 'Blockchain & Decentralised AI',
     summary: 'Practical blockchain and decentralised AI solutions that solve real business problems.',
@@ -66,6 +74,8 @@ export const services: Service[] = [
   },
   {
     slug: 'consulting',
+    short: 'Consulting',
+    color: '#f5a800',
     icon: 'i-heroicons-light-bulb',
     title: 'IT Consulting & Solution Design',
     summary: 'Independent advice on which technology to use, how to architect it and how to roll it out.',

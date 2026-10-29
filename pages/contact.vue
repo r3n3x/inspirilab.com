@@ -78,7 +78,7 @@ function submit() {
 
             <button
               type="submit"
-              class="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--brand)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:bg-[var(--brand-deep)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+              class="btn-primary justify-center"
             >
               Send enquiry
               <UIcon name="i-heroicons-paper-airplane" class="w-5 h-5" />
@@ -93,7 +93,7 @@ function submit() {
                 :href="links.reneLinkedIn"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[var(--brand)] px-5 py-3 font-medium text-[var(--ink)] transition-colors hover:bg-[var(--brand-deep)] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+                class="btn-primary justify-center"
               >
                 Book a consultation with Rene
                 <UIcon name="i-heroicons-arrow-up-right" class="w-4 h-4" />

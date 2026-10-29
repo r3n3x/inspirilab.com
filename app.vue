@@ -27,7 +27,7 @@ watch(() => route.path, () => { menuOpen.value = false })
                 :key="item.to"
                 :to="item.to"
                 class="relative text-sm font-medium text-[var(--ink-2)] hover:text-[var(--ink)] transition-colors"
-                exact-active-class="!text-[var(--ink)] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[var(--brand)]"
+                exact-active-class="!text-[var(--ink)] after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-[3px] after:rounded-full after:bg-[var(--ink)]"
               >
                 {{ item.label }}
               </NuxtLink>
@@ -36,7 +36,7 @@ watch(() => route.path, () => { menuOpen.value = false })
             <div class="hidden md:block">
               <NuxtLink
                 to="/contact?type=consulting"
-                class="inline-flex items-center justify-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] text-sm font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+                class="btn-primary justify-center text-sm"
               >
                 Book a consultation
               </NuxtLink>
@@ -66,7 +66,7 @@ watch(() => route.path, () => { menuOpen.value = false })
           <div class="pt-3">
             <NuxtLink
               to="/contact?type=consulting"
-              class="inline-flex w-full items-center justify-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] text-sm font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors"
+              class="btn-primary w-full justify-center text-sm"
             >
               Book a consultation
             </NuxtLink>

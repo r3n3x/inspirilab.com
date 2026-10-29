@@ -12,6 +12,10 @@
   --brand: #23b573;
   --brand-deep: #13804f;
   --ink-band-secondary: #b7cfc3;
+  --line-red: #e4002b;
+  --line-blue: #0072bc;
+  --line-green: #23b573;
+  --line-amber: #f5a800;
 }
 
 html {
@@ -121,5 +125,49 @@ a {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ---- Rail-map world ---- */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .8rem 1.35rem; border-radius: 999px;
+  background: var(--brand); color: var(--ink); font-weight: 600;
+  border: 3px solid var(--ink);
+  transition: background-color .15s, color .15s, transform .15s;
+}
+.btn-primary:hover { background: var(--ink); color: #fff; }
+.btn-primary:active { transform: translateY(1px); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .8rem 1.35rem; border-radius: 999px;
+  border: 2px solid var(--line); color: var(--ink); font-weight: 500;
+  transition: border-color .15s;
+}
+.btn-secondary:hover { border-color: var(--ink); }
+
+/* Enamel station sign: ink panel, white grotesk, a strip of line colours on top */
+.station-sign {
+  position: relative; background: var(--ink); color: #fff;
+  border-radius: 10px; padding: 1.6rem 1.8rem 1.7rem;
+}
+.station-sign::before {
+  content: ""; position: absolute; left: 1.8rem; top: 0; width: 7.5rem; height: 6px;
+  background: linear-gradient(90deg, var(--line-red) 0 25%, var(--line-blue) 25% 50%, var(--line-green) 50% 75%, var(--line-amber) 75%);
+  border-radius: 0 0 4px 4px;
+}
+
+/* Route spine: one line runs down the page, every section is a stop on it */
+.spine { position: relative; }
+@media (min-width: 768px) {
+  .spine { padding-left: 4rem; }
+  .spine::before {
+    content: ""; position: absolute; left: 1.05rem; top: 0; bottom: 0; width: 8px;
+    background: var(--ink); border-radius: 4px;
+  }
+  .stop { position: relative; }
+  .stop::before {
+    content: ""; position: absolute; left: -3.55rem; top: .35em; width: 1.6rem; height: 1.6rem;
+    border-radius: 999px; background: var(--paper); border: 6px solid var(--ink);
   }
 }

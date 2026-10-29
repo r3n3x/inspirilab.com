@@ -32,7 +32,7 @@ useHead({ title: 'Consulting | Inspirilab' })
               <UIcon name="i-heroicons-arrow-top-right-on-square" class="w-4 h-4" />
             </a>
             <NuxtLink to="/contact?type=consulting"
-              class="mt-6 block w-full text-center px-5 py-3 rounded-[10px] bg-[var(--brand)] text-[var(--ink)] font-medium hover:bg-[var(--brand-deep)] hover:text-white transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2">
+              class="btn-primary mt-6 block w-full text-center">
               Book a consultation
             </NuxtLink>
           </div>

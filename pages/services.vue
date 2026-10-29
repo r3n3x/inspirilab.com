@@ -63,7 +63,7 @@ const projectsFor = (slug: string) => projects.filter(p => p.service === slug)
               <NuxtLink
                 v-if="s.slug === 'consulting'"
                 to="/contact?type=consulting"
-                class="inline-flex items-center justify-center px-5 py-3 rounded-[10px] font-medium text-[var(--ink)] bg-[var(--brand)] hover:bg-[var(--brand-deep)] hover:text-white transition-colors duration-150 focus-visible:outline-2 focus-visible:outline-[var(--brand)] focus-visible:outline-offset-2"
+                class="btn-primary justify-center"
               >
                 Book a consultation
               </NuxtLink>
