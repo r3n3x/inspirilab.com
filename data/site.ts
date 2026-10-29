@@ -173,7 +173,7 @@ export const projects: Project[] = [
     name: 'Heiko PLT',
     url: 'https://heiko.my',
     logo: '/logos/heiko.png',
-    logoBg: '#f0f2f1',
+    logoBg: '#ffffff',
     category: 'Partner project',
     service: 'partners',
     description: 'ESG consultancy helping Malaysian SMEs with sustainability compliance and measurable impact.',
