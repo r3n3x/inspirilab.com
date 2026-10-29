@@ -127,3 +127,45 @@ export const partners = [
   { name: 'MOR.org', url: 'https://mor.org', description: 'Our flagship open-source project focused on decentralized AI and blockchain solutions.' },
   { name: 'Morpheus.asia', url: 'https://morpheus.asia', description: 'Advanced AI and blockchain infrastructure for the Asia-Pacific region.' }
 ]
+
+export const rene = {
+  name: 'Rene Fischer-Bernard',
+  role: 'Vice President, Inspirilab · Executive Director, LuxTag',
+  headline: 'Technology consulting for organisations that want to use blockchain, AI and digital innovation properly.',
+  bio: [
+    'Rene is an international technopreneur with more than 15 years of experience across the blockchain and energy sectors. He co-founded LuxTag in 2017 and has led it since, after earlier work as a consultant and project manager for a range of organisations.',
+    'He holds a German engineering diploma in Industrial Engineering from Hochschule Zittau/Görlitz and a HarvardX certificate in Energy Within Environmental Constraints. His focus is using blockchain to create real value, especially in industrial data integrity, renewable energy and sustainability.',
+    'He is also active in the Morpheus decentralised AI community and ACCESS Blockchain Association Malaysia.'
+  ],
+  credentials: [
+    '15+ years in blockchain and energy',
+    'Co-founder of LuxTag (2017)',
+    'Dipl.-Ing. Industrial Engineering, Hochschule Zittau/Görlitz',
+    'Keynote speaker, World Blockchain Summit Kuala Lumpur'
+  ],
+  // photo: '/rene.jpg' // TODO: add once Rene sends a photo
+}
+
+export const offerings = [
+  { icon: 'i-heroicons-light-bulb', title: 'Innovation & technology strategy', text: "Advice on applying emerging technology to sharpen your organisation's competitive edge." },
+  { icon: 'i-heroicons-magnifying-glass', title: 'Web3 & blockchain idea reviews', text: 'A no-frills, honest assessment of your Web3 or blockchain idea before you invest in building it.' },
+  { icon: 'i-heroicons-cube', title: 'Blockchain solutions for industry', text: 'Ready-to-deploy blockchain solutions for product authenticity, consumer engagement and tamper-proof certificates.' },
+  { icon: 'i-heroicons-shield-check', title: 'Decentralised AI', text: 'Where AI and blockchain meet, and how decentralised AI can work for your organisation.' },
+  { icon: 'i-heroicons-currency-dollar', title: 'DeFi advisory', text: 'Understanding decentralised finance and the opportunities it opens for you or your business.' },
+  { icon: 'i-heroicons-microphone', title: 'Speaking & training', text: 'Keynotes, panels, workshops and hackathon mentoring on blockchain, crypto, DeFi and innovation.' }
+]
+
+export const topics = [
+  'Introduction to blockchain & cryptocurrencies',
+  'Industrial applications of blockchain',
+  'DeFi, cryptocurrencies & stablecoins',
+  'Startups & entrepreneurship',
+  'Hackathons & innovation workshops'
+]
+
+export const talks = [
+  { year: '2025', title: 'SuperDeAI Event', place: 'Kuala Lumpur, Malaysia' },
+  { year: '2021', title: 'Symbol Hackathon, Mentor', place: 'Online' },
+  { year: '2019', title: 'Keynote, World Blockchain Summit', place: 'Kuala Lumpur, Malaysia' },
+  { year: '2018', title: 'Intro to Blockchain and Use-Cases', place: 'Moscow, Russia' }
+]
