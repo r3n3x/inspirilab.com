@@ -119,7 +119,7 @@ function go(st: Station) {
 .map-ghost { font: italic 500 14px 'Public Sans Variable', sans-serif; fill: var(--ink-2); }
 .map-station { cursor: pointer; outline: none; }
 .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1100ms cubic-bezier(.65,0,.35,1) forwards; }
-.pop { transform-box: fill-box; transform-origin: center; animation: pop 420ms cubic-bezier(.34,1.56,.64,1) both; }
+.pop { transform-box: fill-box; transform-origin: center; animation: pop 420ms cubic-bezier(.16,1,.3,1) both; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
 @keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) {

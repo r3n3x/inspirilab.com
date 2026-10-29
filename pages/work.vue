@@ -58,9 +58,9 @@ const filtered = computed(() => {
           </button>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <TransitionGroup tag="div" name="card" class="grid md:grid-cols-2 gap-6">
           <ProjectCard v-for="p in filtered" :key="p.name" :project="p" />
-        </div>
+        </TransitionGroup>
       </div>
     </section>
 

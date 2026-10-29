@@ -4,7 +4,7 @@ import { team } from '~/data/site'
 
 <template>
   <!-- The team as one line with four stations -->
-  <ol class="relative grid gap-8 md:grid-cols-4 md:gap-6">
+  <ol v-reveal class="relative grid gap-8 md:grid-cols-4 md:gap-6">
     <span class="absolute hidden md:block left-0 right-0 top-[1.4rem] h-2 rounded-full bg-[var(--ink)]" aria-hidden="true" />
     <span class="absolute md:hidden left-[1.15rem] top-2 bottom-2 w-2 rounded-full bg-[var(--ink)]" aria-hidden="true" />
     <li v-for="p in team" :key="p.name" class="relative flex md:block gap-5">
