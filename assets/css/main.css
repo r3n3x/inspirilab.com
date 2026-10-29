@@ -50,3 +50,7 @@
     border-color: #23b573;
   }
 }
+/* Keep anchor targets clear of the fixed nav */
+[id] {
+  scroll-margin-top: 5rem;
+}
