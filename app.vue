@@ -82,7 +82,7 @@ function landScroll() {
                 to="/contact?type=consulting"
                 class="btn-primary justify-center text-sm"
               >
-                Book a consultation
+                Free first consultation
               </NuxtLink>
             </div>
 
@@ -113,7 +113,7 @@ function landScroll() {
               to="/contact?type=consulting"
               class="btn-primary w-full justify-center text-sm"
             >
-              Book a consultation
+              Free first consultation
             </NuxtLink>
           </div>
         </div>

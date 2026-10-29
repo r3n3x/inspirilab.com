@@ -65,7 +65,7 @@ const projectsFor = (slug: string) => projects.filter(p => p.service === slug)
                 to="/contact?type=consulting"
                 class="btn-primary justify-center"
               >
-                Book a consultation
+                Book a free first consultation
               </NuxtLink>
 
               <!-- Related work -->
@@ -103,7 +103,7 @@ const projectsFor = (slug: string) => projects.filter(p => p.service === slug)
 
     <CtaBanner
       title="Not sure what you need?"
-      text="Start with a consultation. Rene will help you scope the right solution before anything gets built."
+      text="Start with a free first consultation. We will help you scope the right solution before anything gets built."
     />
   </div>
 </template>

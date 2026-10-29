@@ -68,17 +68,26 @@ function go(st: Station) {
         <circle :cx="IX" :cy="IY" r="30" fill="var(--paper)" stroke="var(--ink)" stroke-width="12" />
         <circle :cx="IX" :cy="IY" r="9" fill="var(--ink)" />
       </svg>
-      <div class="absolute left-0 w-[21%] -translate-y-1/2" :style="{ top: `${(IY / 480) * 100}%` }">
+      <div class="cta-zone absolute left-0 w-[21%] -translate-y-1/2" :style="{ top: `${(IY / 480) * 100}%` }">
         <p class="absolute bottom-full left-0 mb-2 text-sm font-medium text-[var(--ink-2)]">Interchange</p>
         <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center text-center leading-snug">
-          Start here: book a consultation
+          Start here
         </NuxtLink>
+        <div class="free-note absolute top-full left-[8%] mt-1 flex items-start gap-1.5" aria-hidden="true">
+          <svg viewBox="0 0 40 44" class="free-arrow w-9 h-10 shrink-0 text-[var(--ink)]" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path class="free-shaft" pathLength="100" d="M34 40 C 14 38, 8 26, 10 6" /><path class="free-head" pathLength="100" d="M3 13 L10 5 L17 12" />
+          </svg>
+          <span class="mt-5 -rotate-2 rounded-lg bg-[#f5a800] px-3 py-1.5 text-sm font-bold leading-tight text-[var(--ink)] shadow-[3px_3px_0_var(--ink)] whitespace-nowrap">
+            Your first consultation<br />is <span class="uppercase tracking-wide">free</span>
+          </span>
+        </div>
       </div>
     </div>
 
     <!-- Phone: the same network read as a strip map -->
     <div class="md:hidden">
       <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: book a consultation</NuxtLink>
+      <p class="mt-3 text-center"><span class="inline-block -rotate-1 rounded-lg bg-[#f5a800] px-3 py-1 text-sm font-bold text-[var(--ink)] shadow-[3px_3px_0_var(--ink)]">Your first consultation is <span class="uppercase tracking-wide">free</span></span></p>
       <ol class="mt-8 space-y-7">
         <li v-for="l in lines" :key="l.slug">
           <NuxtLink :to="`/services#${l.slug}`" class="flex items-center gap-3 font-semibold text-[var(--ink)]">
@@ -131,4 +140,12 @@ function go(st: Station) {
 }
 .map-station:hover circle, .map-station:focus-visible circle { r: 16; }
 .map-station:focus-visible text { text-decoration: underline; }
+.free-note { opacity: 0; animation: note-in .5s var(--ease-out, ease-out) 2.2s forwards; }
+@keyframes note-in { from { opacity: 0; transform: translate3d(0,8px,0) } to { opacity: 1; transform: none } }
+.free-shaft, .free-head { stroke-dasharray: 100 100; stroke-dashoffset: 0; }
+.cta-zone:hover .free-shaft, .cta-zone:focus-within .free-shaft { animation: shaft 1.4s var(--ease-out, ease-out) infinite; }
+.cta-zone:hover .free-head, .cta-zone:focus-within .free-head { animation: head 1.4s var(--ease-out, ease-out) infinite; }
+@keyframes shaft { 0% { stroke-dashoffset: 100 } 45%, 100% { stroke-dashoffset: 0 } }
+@keyframes head { 0%, 40% { stroke-dashoffset: 100 } 60%, 100% { stroke-dashoffset: 0 } }
+@media (prefers-reduced-motion: reduce) { .free-note { opacity: 1; animation: none } .cta-zone:hover .free-shaft, .cta-zone:hover .free-head { animation: none } }
 </style>
