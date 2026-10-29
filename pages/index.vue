@@ -43,7 +43,7 @@ onBeforeUnmount(() => {
             Every line starts with one conversation.
           </h1>
           <p class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">
-            Technology consulting with Rene Fischer-Bernard, and a team in Cyberjaya that builds what you decide:
+            Technology consulting from Rene and the Inspirilab team in Cyberjaya, who then build what you decide:
             SaaS and AI products, websites, blockchain and decentralised AI.
           </p>
         </div>
@@ -93,6 +93,13 @@ onBeforeUnmount(() => {
               </ul>
             </div>
           </div>
+        </section>
+
+        <!-- Stop: the team -->
+        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The people behind the lines</h2>
+          <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">Inspirilab is run by a leadership team that brings together software, partnerships, strategy and risk.</p>
+          <div class="mt-10"><TeamLine /></div>
         </section>
 
         <!-- Stop 2: the lines -->

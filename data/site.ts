@@ -186,3 +186,11 @@ export const talks = [
   { year: '2019', title: 'Keynote, World Blockchain Summit', place: 'Kuala Lumpur, Malaysia' },
   { year: '2018', title: 'Intro to Blockchain and Use-Cases', place: 'Moscow, Russia' }
 ]
+
+// Management team. Roles are taken from each person's LinkedIn headline; confirm wording with them.
+export const team = [
+  { name: 'Rene Fischer-Bernard', initials: 'RF', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
+  { name: 'Marcus Toy', initials: 'MT', role: 'Serial founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
+  { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
+  { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
+]
