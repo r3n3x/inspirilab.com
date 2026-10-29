@@ -177,8 +177,9 @@ a {
 @media (min-width: 768px) {
   .spine.live::before { background: var(--line); }
   .spine.live .spine-fill {
-    display: block; position: absolute; left: 1.05rem; top: 0; width: 8px; height: var(--fill, 0%);
-    background: var(--ink); border-radius: 4px; transition: height 120ms linear;
+    display: block; position: absolute; left: 1.05rem; top: 0; bottom: 0; width: 8px;
+    background: var(--ink); border-radius: 4px;
+    transform-origin: 50% 0; transform: scaleY(var(--fill-s, 0)); will-change: transform;
   }
   .spine.live .stop::before { border-color: var(--line); transition: border-color .3s, background-color .3s, transform .3s cubic-bezier(.16,1,.3,1); z-index: 1; }
   .spine.live .stop.reached::before { border-color: var(--ink); background: var(--brand); transform: scale(1.12); }
@@ -201,20 +202,23 @@ a {
   border-radius: 3px; background: var(--line); opacity: 0; transition: opacity .3s;
 }
 .nav-track:hover::before { opacity: 1; }
+/* Only transform/opacity animate here, so the browser can run it on the compositor (no layout per frame) */
 .nav-train {
-  position: absolute; left: 0; bottom: -2px; height: 3px; border-radius: 3px; background: var(--ink);
-  opacity: 0; transition: transform .5s var(--ease-out), width .5s var(--ease-out), opacity .2s;
+  position: absolute; left: 0; bottom: -2px; width: 100px; height: 3px; border-radius: 3px; background: var(--ink);
+  transform-origin: 0 50%; will-change: transform;
+  opacity: 0; transition: transform .5s var(--ease-out), opacity .2s;
 }
-.nav-train.is-on { opacity: 1; }
-.nav-train::after { /* the train's headlight: a small disc at the front */
-  content: ""; position: absolute; right: -4px; top: 50%; width: 9px; height: 9px; margin-top: -4.5px;
+.nav-light { /* the train's headlight: a small disc at the front */
+  position: absolute; left: -4.5px; bottom: -5px; width: 9px; height: 9px;
   border-radius: 999px; background: var(--paper); border: 2.5px solid var(--ink);
+  will-change: transform; opacity: 0; transition: transform .5s var(--ease-out), opacity .2s;
 }
+.nav-train.is-on, .nav-light.is-on { opacity: 1; }
 .nav-link:hover { color: var(--ink); }
 
 /* Page change: the old page pulls out to the left, the new one arrives from the right */
-.page-enter-active { transition: opacity .42s var(--ease-out), transform .42s var(--ease-out); }
-.page-leave-active { transition: opacity .18s ease-in, transform .18s ease-in; }
+.page-enter-active { transition: opacity .42s var(--ease-out), transform .42s var(--ease-out); will-change: transform, opacity; }
+.page-leave-active { transition: opacity .18s ease-in, transform .18s ease-in; will-change: transform, opacity; }
 .page-enter-from { opacity: 0; transform: translateX(32px); }
 .page-leave-to { opacity: 0; transform: translateX(-24px); }
 

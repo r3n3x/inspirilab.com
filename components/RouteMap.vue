@@ -54,9 +54,8 @@ function go(st: Station) {
           @mouseenter="active = l.slug" @mouseleave="active = null">
           <path :id="`line-${l.slug}`" :d="l.d" :stroke="l.color" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round"
             pathLength="1" class="draw" :style="{ animationDelay: `${300 + li * 220}ms` }" />
-          <circle v-if="active === l.slug" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5" class="train">
-            <animateMotion dur="2.6s" repeatCount="indefinite" rotate="auto"><mpath :href="`#line-${l.slug}`" /></animateMotion>
-          </circle>
+          <circle v-if="active === l.slug" r="9" fill="var(--paper)" stroke="var(--ink)" stroke-width="5" class="train"
+            :style="{ offsetPath: `path('${l.d}')` }" />
           <text :x="IX + 270" :y="l.y - 20" class="map-line">{{ l.short }}</text>
           <a v-for="(st, si) in l.stations" :key="st.name" :href="st.href" :target="st.external ? '_blank' : undefined"
             :rel="st.external ? 'noopener' : undefined" class="map-station pop" :style="{ animationDelay: `${700 + li * 220 + si * 120}ms` }" @click.prevent="go(st)">
@@ -121,6 +120,9 @@ function go(st: Station) {
 .draw { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1100ms cubic-bezier(.65,0,.35,1) forwards; }
 .pop { transform-box: fill-box; transform-origin: center; animation: pop 420ms cubic-bezier(.16,1,.3,1) both; }
 @keyframes draw { to { stroke-dashoffset: 0; } }
+/* The train rides the line with CSS motion paths (smoother than SMIL animateMotion) */
+.train { offset-rotate: 0deg; animation: ride 2.6s cubic-bezier(.45, 0, .55, 1) infinite; will-change: offset-distance; }
+@keyframes ride { from { offset-distance: 0%; } to { offset-distance: 100%; } }
 @keyframes pop { from { opacity: 0; transform: scale(.4); } to { opacity: 1; transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) {
   .draw { animation: none; stroke-dashoffset: 0; }

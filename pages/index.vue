@@ -16,7 +16,7 @@ function update() {
   const r = el.getBoundingClientRect()
   const mark = window.innerHeight * 0.6
   const pct = Math.min(100, Math.max(0, ((mark - r.top) / r.height) * 100))
-  el.style.setProperty('--fill', `${pct}%`)
+  el.style.setProperty('--fill-s', String(pct / 100))
   el.querySelectorAll<HTMLElement>('.stop').forEach((s) => s.classList.toggle('reached', s.getBoundingClientRect().top < mark))
 }
 const onScroll = () => { if (!frame) frame = requestAnimationFrame(update) }

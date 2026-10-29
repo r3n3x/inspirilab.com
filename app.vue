@@ -64,7 +64,9 @@ watch(() => route.path, () => { menuOpen.value = false; nextTick(placeMarker) })
                 {{ item.label }}
               </NuxtLink>
               <span class="nav-train" :class="marker.show ? 'is-on' : ''" aria-hidden="true"
-                :style="{ transform: `translateX(${marker.x}px)`, width: `${marker.w}px` }" />
+                :style="{ transform: `translate3d(${marker.x}px,0,0) scaleX(${marker.w / 100})` }" />
+              <span class="nav-light" :class="marker.show ? 'is-on' : ''" aria-hidden="true"
+                :style="{ transform: `translate3d(${marker.x + marker.w}px,0,0)` }" />
             </div>
 
             <div class="hidden md:block">
