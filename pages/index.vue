@@ -40,7 +40,7 @@ onBeforeUnmount(() => {
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="station-sign rise max-w-3xl">
           <h1 class="text-[clamp(2.2rem,5vw,4rem)] leading-[1.03] font-bold text-white">
-            Every good project starts with one conversation.
+            Every <span class="text-[var(--brand)]">successful</span> project starts with one conversation.
           </h1>
           <p class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">
             Book a free first consultation with the Inspirilab team in Cyberjaya. We help you see what is worth building, then build it with you:
