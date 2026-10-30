@@ -40,15 +40,16 @@ onBeforeUnmount(() => {
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="station-sign rise max-w-3xl">
           <h1 class="text-[clamp(2.2rem,5vw,4rem)] leading-[1.03] font-bold text-white">
-            Every line starts with one conversation.
+            Every good project starts with one conversation.
           </h1>
           <p class="mt-4 text-lg text-[var(--ink-band-secondary)] max-w-2xl">
-            Technology consulting from the Inspirilab team in Cyberjaya, led by Rene Fischer-Bernard. Then we build what you decide:
+            Book a free first consultation with the Inspirilab team in Cyberjaya. We help you see what is worth building, then build it with you:
             SaaS and AI products, websites, blockchain and decentralised AI.
           </p>
         </div>
 
-        <div class="mt-10 md:mt-6">
+        <p class="mt-10 text-[var(--ink-2)] max-w-2xl">How we work, drawn as a transit map: every project starts at the consultation, then travels along one of our service lines. Each station is a project we have built.</p>
+        <div class="mt-6 md:mt-4">
           <RouteMap />
         </div>
         <div class="mt-6 md:mt-4 md:text-right">
@@ -67,14 +68,8 @@ onBeforeUnmount(() => {
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
           <div class="grid lg:grid-cols-12 gap-10">
             <div class="lg:col-span-5">
-              <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The interchange: consulting</h2>
-              <p class="mt-5 text-lg text-[var(--ink-2)]"><strong class="text-[var(--ink)]">Led by Rene Fischer-Bernard.</strong> {{ rene.bio[0] }}</p>
-              <ul class="mt-6 space-y-2.5">
-                <li v-for="c in rene.credentials" :key="c" class="flex items-start gap-3">
-                  <span class="mt-1.5 w-3 h-3 shrink-0 rounded-full border-[3px] border-[var(--ink)]" aria-hidden="true" />
-                  <span>{{ c }}</span>
-                </li>
-              </ul>
+              <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Where every project starts</h2>
+              <p class="mt-5 text-lg text-[var(--ink-2)]">A free first consultation with our team. We look at where your business stands, what is changing in technology and what is actually worth doing, so fear of missing out or fear of change turns into a clear next step.</p>
               <div class="mt-8 flex flex-wrap gap-3">
                 <NuxtLink to="/contact?type=consulting" class="btn-primary">Book a free first consultation</NuxtLink>
                 <NuxtLink to="/consulting" class="btn-secondary">About our consulting</NuxtLink>
@@ -97,7 +92,7 @@ onBeforeUnmount(() => {
 
         <!-- Stop: the team -->
         <section class="py-16 md:py-20 border-t border-[var(--line)]">
-          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The people behind the lines</h2>
+          <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The team</h2>
           <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">Inspirilab is run by a leadership team that brings together software, partnerships, strategy and risk.</p>
           <div class="mt-10"><TeamLine /></div>
         </section>
