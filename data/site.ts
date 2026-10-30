@@ -83,7 +83,7 @@ export const services: Service[] = [
       'Technology and innovation strategy',
       'Solution architecture and technical reviews',
       'Workshops, training and speaking',
-      'Led by our Vice President, Rene Fischer-Bernard'
+      'Free first consultation to scope your project'
     ]
   },
   {
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     logoBg: '#faedd9',
     category: 'Partner project',
     service: 'partners',
-    description: 'An app for anonymous voice and chat conversations, built by a founding team from Bandung, Indonesia. Rene advises the project.',
+    description: 'An app for anonymous voice and chat conversations, built by a founding team from Bandung, Indonesia. Inspirilab advises the project.',
     tags: ['Advisory', 'App', 'Wellbeing']
   },
   {
@@ -187,7 +187,7 @@ export const partners = [
 ]
 
 export const rene = {
-  name: 'Rene Fischer-Bernard',
+  name: 'Rene',
   role: 'Vice President, Inspirilab · Executive Director, LuxTag',
   headline: 'Technology consulting for organisations that want to use blockchain, AI and digital innovation properly.',
   bio: [
@@ -230,7 +230,7 @@ export const talks = [
 
 // Management team. Roles are taken from each person's LinkedIn headline; confirm wording with them.
 export const team = [
-  { name: 'Rene Fischer-Bernard', initials: 'RF', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
+  { name: 'Rene', initials: 'R', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
   { name: 'Marcus Toy', initials: 'MT', role: 'Serial founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
   { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
   { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
