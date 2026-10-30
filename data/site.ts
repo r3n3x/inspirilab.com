@@ -187,7 +187,7 @@ export const partners = [
 ]
 
 export const rene = {
-  name: 'Rene F.-Bernard',
+  name: 'Rene',
   role: 'Vice President, Inspirilab · Executive Director, LuxTag',
   headline: 'Technology consulting for organisations that want to use blockchain, AI and digital innovation properly.',
   bio: [
@@ -230,7 +230,7 @@ export const talks = [
 
 // Management team. Roles are taken from each person's LinkedIn headline; confirm wording with them.
 export const team = [
-  { name: 'Rene F.-Bernard', initials: 'RF', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
+  { name: 'Rene', initials: 'R', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
   { name: 'Marcus Toy', initials: 'MT', role: 'Serial founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
   { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
   { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
