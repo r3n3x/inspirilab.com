@@ -92,7 +92,7 @@ export const services: Service[] = [
     color: '#7b3fa0',
     icon: 'i-heroicons-users',
     title: 'Partner Projects & Incubation',
-    summary: 'Ventures we partner with, advise or help incubate, from early idea to running business.',
+    summary: 'Ventures we partner with, advise or help incubate, from early ideas to running businesses.',
     points: [
       'Advisory for founding teams',
       'Product and technology support',
@@ -120,7 +120,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'AuditGBP.my',
-    url: 'https://auditgbp.my',
+    // url: 'https://auditgbp.my', // re-enable once the site is live
     logo: '/logos/pakciklocation.jpg',
     logoBg: '#ffffff',
     category: 'SaaS & AI',
@@ -187,7 +187,7 @@ export const partners = [
 ]
 
 export const rene = {
-  name: 'Rene',
+  name: 'Rene Bernard',
   role: 'Vice President, Inspirilab · Executive Director, LuxTag',
   headline: 'Technology consulting for organisations that want to use blockchain, AI and digital innovation properly.',
   bio: [
@@ -230,10 +230,10 @@ export const talks = [
 
 // Management team. Roles are taken from each person's LinkedIn headline; confirm wording with them.
 export const team = [
-  { name: 'Rene', initials: 'R', role: 'Vice President', note: 'Blockchain, innovation and energy; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
-  { name: 'Marcus Toy', initials: 'MT', role: 'Serial founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
-  { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships Lead', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' },
-  { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' }
+  { name: 'Rene Bernard', initials: 'RB', role: 'Vice President', note: 'Blockchain and innovation; co-founder of LuxTag', linkedin: 'https://www.linkedin.com/in/connectwithrene/' },
+  { name: 'Elmi Haryadi', initials: 'EH', role: 'Strategy, Innovation & Risk Management', note: 'Safegate Labs', linkedin: 'https://www.linkedin.com/in/elmiharyadi/' },
+  { name: 'Marcus Toy', initials: 'MT', role: 'Founder', note: 'Building software products for 13+ years', linkedin: 'https://www.linkedin.com/in/marcus-toy/' },
+  { name: 'Ana Mouratidou', initials: 'AM', role: 'Strategic Partnerships', linkedin: 'https://www.linkedin.com/in/ana-mouratidou/' }
 ]
 
 // Rene's consulting approach: "Convert fear into opportunity". Draft wording, confirm with Rene.
