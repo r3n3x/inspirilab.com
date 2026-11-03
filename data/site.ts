@@ -120,12 +120,11 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'AuditGBP.my',
-    // url: 'https://auditgbp.my', // re-enable once the site is live
+    url: 'https://auditgbp.my',
     logo: '/logos/pakciklocation.jpg',
     logoBg: '#ffffff',
     category: 'SaaS & AI',
     service: 'saas-ai',
-    status: 'Go-live Q4/2026',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
     partner: { name: 'PakCikLocation', url: 'https://pakciklocation.my' },
     tags: ['AI', 'SaaS', 'Cloudflare']
