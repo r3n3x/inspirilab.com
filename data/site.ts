@@ -125,7 +125,6 @@ export const projects: Project[] = [
     logoBg: '#ffffff',
     category: 'SaaS & AI',
     service: 'saas-ai',
-    status: 'Go-live Q4/2026',
     description: 'An AI-powered audit tool that analyses Google Business Profiles and gives businesses a clear report on how to improve their local search visibility.',
     partner: { name: 'PakCikLocation', url: 'https://pakciklocation.my' },
     tags: ['AI', 'SaaS', 'Cloudflare']
