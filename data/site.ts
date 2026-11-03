@@ -120,7 +120,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     name: 'AuditGBP.my',
-    // url: 'https://auditgbp.my', // re-enable once the site is live
+    url: 'https://auditgbp.my',
     logo: '/logos/pakciklocation.jpg',
     logoBg: '#ffffff',
     category: 'SaaS & AI',
