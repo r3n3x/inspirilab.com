@@ -9,7 +9,7 @@ useHead({ title: 'Consulting | Inspirilab' })
     <PageHeader title="Technology" highlight="consulting" subtitle="Clarity on blockchain, AI and digital innovation, from a team that also builds it." />
 
     <!-- What we advise on -->
-    <section class="py-20 md:py-28">
+    <section class="py-12 md:py-28">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] font-bold tracking-[-0.03em] text-[var(--ink)]">What we advise on</h2>
         <div v-reveal class="mt-10 grid md:grid-cols-2 gap-x-12">
@@ -28,7 +28,7 @@ useHead({ title: 'Consulting | Inspirilab' })
     </section>
 
     <!-- Approach: fear into opportunity -->
-    <section class="py-20 md:py-28 border-t border-[var(--line)]">
+    <section class="py-12 md:py-28 border-t border-[var(--line)]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-[clamp(1.9rem,3.6vw,3rem)] leading-[1.1] font-bold tracking-[-0.03em] text-[var(--ink)]">{{ clarity.title }}</h2>
         <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">{{ clarity.intro }}</p>
@@ -46,7 +46,7 @@ useHead({ title: 'Consulting | Inspirilab' })
     </section>
 
     <!-- Speaking -->
-    <section class="py-20 md:py-28 bg-[var(--mist)]">
+    <section class="py-12 md:py-28 bg-[var(--mist)]">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
         <div>
           <h2 class="text-[1.9rem] md:text-[2.5rem] font-semibold tracking-[-0.03em] text-[var(--ink)] mb-6 text-wrap-balance">

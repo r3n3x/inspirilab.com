@@ -29,7 +29,7 @@ function submit() {
       subtitle="Book a free first consultation with our team, or tell us about a product you want built."
     />
 
-    <section class="py-20 md:py-28">
+    <section class="py-12 md:py-28">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 lg:gap-16">
         <!-- Left: form or LinkedIn fallback -->
         <div class="lg:col-span-7">

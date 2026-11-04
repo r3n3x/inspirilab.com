@@ -65,7 +65,7 @@ onBeforeUnmount(() => {
       <div ref="spine" class="spine pb-6">
         <div class="spine-fill" aria-hidden="true" />
         <!-- Stop 1: the interchange -->
-        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+        <section class="py-12 md:py-20 border-t border-[var(--line)]">
           <div class="grid lg:grid-cols-12 gap-10">
             <div class="lg:col-span-5">
               <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Where every project starts</h2>
@@ -82,7 +82,7 @@ onBeforeUnmount(() => {
                   <UIcon :name="o.icon" class="w-5 h-5 mt-0.5 shrink-0 text-[var(--ink)]" aria-hidden="true" />
                   <div>
                     <p class="font-semibold">{{ o.title }}</p>
-                    <p class="text-[0.95rem] text-[var(--ink-2)]">{{ o.text }}</p>
+                    <p class="hidden md:block text-[0.95rem] text-[var(--ink-2)]">{{ o.text }}</p>
                   </div>
                 </li>
               </ul>
@@ -91,14 +91,14 @@ onBeforeUnmount(() => {
         </section>
 
         <!-- Stop: the team -->
-        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+        <section class="py-12 md:py-20 border-t border-[var(--line)]">
           <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">The team</h2>
           <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">Inspirilab is run by a leadership team that brings together software, partnerships, strategy and risk.</p>
           <div class="mt-10"><TeamLine /></div>
         </section>
 
         <!-- Stop 2: the lines -->
-        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+        <section class="py-12 md:py-20 border-t border-[var(--line)]">
           <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Five lines, one team</h2>
           <p class="mt-4 text-lg text-[var(--ink-2)] max-w-2xl">From strategy to a live product: we design, build and run the software behind each line.</p>
           <div v-reveal class="mt-10 space-y-3">
@@ -106,14 +106,14 @@ onBeforeUnmount(() => {
               class="group grid md:grid-cols-12 gap-3 md:gap-6 items-center rounded-xl border-2 border-transparent hover:border-[var(--ink)] p-4 md:p-5 transition-colors">
               <span class="md:col-span-1 h-3.5 w-14 rounded-full" :style="{ background: s.color }" aria-hidden="true" />
               <span class="md:col-span-4 text-xl font-bold">{{ s.title }}</span>
-              <span class="md:col-span-6 text-[var(--ink-2)]">{{ s.summary }}</span>
+              <span class="hidden md:block md:col-span-6 text-[var(--ink-2)]">{{ s.summary }}</span>
               <UIcon name="i-heroicons-arrow-right" class="hidden md:block md:col-span-1 justify-self-end w-5 h-5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </NuxtLink>
           </div>
         </section>
 
         <!-- Stop 3: stations -->
-        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+        <section class="py-12 md:py-20 border-t border-[var(--line)]">
           <div class="flex flex-wrap items-end justify-between gap-4">
             <h2 class="stop text-[clamp(1.9rem,3.6vw,2.8rem)] leading-[1.1] font-bold">Stations we've built</h2>
             <NuxtLink to="/work" class="inline-flex items-center gap-1.5 font-medium text-[var(--brand-deep)] hover:underline">
@@ -121,12 +121,12 @@ onBeforeUnmount(() => {
             </NuxtLink>
           </div>
           <div v-reveal class="mt-10 grid md:grid-cols-2 gap-5">
-            <ProjectCard v-for="p in projects" :key="p.name" :project="p" :line="lineOf(p.service)" />
+            <div v-for="(p, i) in projects" :key="p.name" :class="i > 3 ? 'hidden md:block' : ''"><ProjectCard :project="p" :line="lineOf(p.service)" /></div>
           </div>
         </section>
 
         <!-- Stop 4: connecting lines -->
-        <section class="py-16 md:py-20 border-t border-[var(--line)]">
+        <section class="py-12 md:py-20 border-t border-[var(--line)]">
           <h2 class="stop text-[clamp(1.6rem,3vw,2.2rem)] leading-[1.1] font-bold">Connecting lines</h2>
           <p class="mt-3 text-[var(--ink-2)]">Our flagship open-source partners.</p>
           <div class="mt-8 grid md:grid-cols-2 gap-x-10">
