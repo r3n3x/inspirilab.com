@@ -127,8 +127,8 @@ function landScroll() {
       <!-- Footer -->
       <footer class="bg-[var(--ink)] text-white py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="grid md:grid-cols-4 gap-12 pb-10 border-b border-white/10">
-            <div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-10 md:gap-12 pb-10 border-b border-white/10">
+            <div class="col-span-2 md:col-span-1">
               <span class="inline-flex items-center justify-center h-9 px-3 rounded-full bg-white/10 mb-4">
                 <img src="/logo.png" alt="Inspirilab" class="h-12 w-auto -ml-1" />
               </span>

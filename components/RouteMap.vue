@@ -88,23 +88,23 @@ function go(st: Station) {
     <div class="md:hidden">
       <NuxtLink to="/contact?type=consulting" class="btn-primary w-full justify-center">Start here: book a consultation</NuxtLink>
       <p class="mt-3 text-center"><span class="inline-block -rotate-1 rounded-lg bg-[#f5a800] px-3 py-1 text-sm font-bold text-[var(--ink)] shadow-[3px_3px_0_var(--ink)]">Your first consultation is <span class="uppercase tracking-wide">free</span></span></p>
-      <ol class="mt-8 space-y-7">
-        <li v-for="l in lines" :key="l.slug">
+      <ol class="mt-8 divide-y divide-[var(--line)] border-y border-[var(--line)]">
+        <li v-for="l in lines" :key="l.slug" class="py-3.5">
           <NuxtLink :to="`/services#${l.slug}`" class="flex items-center gap-3 font-semibold text-[var(--ink)]">
-            <span class="w-9 h-3.5 rounded-full" :style="{ background: l.color }" aria-hidden="true" />{{ l.short }}
+            <span class="w-9 h-3.5 shrink-0 rounded-full" :style="{ background: l.color }" aria-hidden="true" />{{ l.short }}
+            <UIcon name="i-heroicons-arrow-right" class="ml-auto w-4 h-4 text-[var(--ink-2)]" aria-hidden="true" />
           </NuxtLink>
-          <div class="relative mt-3 ml-4 pl-7">
-            <span class="absolute left-0 top-1 bottom-1 w-2 rounded-full" :style="{ background: l.color }" aria-hidden="true" />
-            <a v-for="st in l.stations" :key="st.name" :href="st.href" :target="st.external ? '_blank' : undefined"
-              class="relative flex items-center py-1.5 text-[0.95rem]" :class="st.ghost ? 'text-[var(--ink-2)] italic' : 'text-[var(--ink)]'"
-              @click.prevent="go(st)">
-              <span class="absolute -left-[1.6rem] w-4 h-4 rounded-full bg-[var(--paper)]"
-                :class="st.ghost ? 'border-2 border-dashed' : 'border-[3px] border-[var(--ink)]'" :style="st.ghost ? { borderColor: l.color } : undefined" aria-hidden="true" />
-              {{ st.name }}
+          <div class="mt-2 ml-12 flex flex-wrap gap-x-4 gap-y-1.5">
+            <a v-for="st in l.stations.filter((s) => !s.ghost)" :key="st.name" :href="st.href" :target="st.external ? '_blank' : undefined"
+              class="inline-flex items-center gap-1.5 text-[0.9rem] text-[var(--ink-2)]" @click.prevent="go(st)">
+              <span class="w-2.5 h-2.5 rounded-full bg-[var(--paper)] border-2 border-[var(--ink)]" aria-hidden="true" />{{ st.name }}
             </a>
           </div>
         </li>
       </ol>
+      <NuxtLink to="/contact" class="mt-4 inline-flex items-center gap-1.5 text-[0.95rem] italic text-[var(--ink-2)]">
+        Your project could be the next station <UIcon name="i-heroicons-arrow-right" class="w-4 h-4" aria-hidden="true" />
+      </NuxtLink>
     </div>
 
     <!-- Legend: the signature interaction (hover or focus a line to isolate it) -->

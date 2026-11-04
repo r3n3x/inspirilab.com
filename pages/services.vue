@@ -14,7 +14,7 @@ const projectsFor = (slug: string) => projects.filter(p => p.service === slug)
       subtitle="Software products, websites and blockchain solutions, designed, built and run by our team in Cyberjaya."
     />
 
-    <section class="py-20 md:py-28">
+    <section class="py-12 md:py-28">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="lg:grid lg:grid-cols-12 lg:gap-12">
           <!-- Sticky in-page nav -->
